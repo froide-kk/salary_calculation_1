@@ -1,2 +1,0 @@
-class AddEmployee < ApplicationRecord
-end
