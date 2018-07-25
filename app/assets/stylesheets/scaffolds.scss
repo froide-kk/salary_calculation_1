@@ -1,0 +1,198 @@
+body {
+    background-color: #fff;
+    color: #333;
+    //margin: 33px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;	
+  }
+  
+  p, ol, ul, td {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  
+  pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+  }
+  
+  a {
+    color: #000;
+  
+    &:visited {
+      color: #666;
+    }
+  
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+  
+
+
+ table.type10 {
+    border-collapse: collapse;
+    text-align: right;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 10px;
+}
+table.type10 thead th {
+    
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #fff;
+    background: #ffb400;
+    margin: 20px 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+table.type10 tbody th {
+    
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+table.type10 td {
+
+    padding: 10px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+}
+table.type10 .even {
+    background: #ffe600;
+}
+  
+
+
+
+div 
+{
+	
+    &.field, &.actions {
+      margin-bottom: 10px;
+    }
+  }
+  
+  #notice {
+    color: green;
+  }
+  
+  .field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+  }
+  
+  #error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+  
+    h2 {
+      text-align: left;
+      font-weight: bold;
+      padding: 5px 5px 5px 15px;
+      font-size: 12px;
+      margin: -7px -7px 0;
+      background-color: #c00;
+      color: #fff;
+    }
+  
+    ul li {
+      font-size: 12px;
+      list-style: square;
+    }
+  }
+  
+h3
+{
+	display: inline;
+	margin-left: 30px;
+}
+
+  label {
+    display: block;
+  }
+
+
+
+
+
+ #topMenu {
+        height: 30px;
+       
+    }
+
+    #topMenu ul {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #topMenu ul li {
+        color: rgb(255, 255, 255);
+        background-color: #2d2d2d;
+        float: left;
+        line-height: 50px;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+    }
+
+    .menuLink,
+    .submenuLink {
+        text-decoration: none;
+        display: block;
+        width: 150px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Trebuchet MS", Dotum;
+		
+    }
+
+    .menuLink {
+        color: rgb(255, 255, 255);
+    }
+
+    .topMenuLi:hover .menuLink {
+        color: rgb(252, 252, 252);
+        background-color: #838080
+    }
+
+    .submenuLink {
+        color: #2d2d2d;
+        background-color: white;
+        border: solid 1px black;
+        margin-top: -1px;
+    }
+
+    .longLink {
+        width: 190px;
+    }
+
+    .submenu {
+        position: absolute;
+        height: 0px;
+        overflow: hidden;
+        transition: height .2s;
+        -webkit-transition: height .2s;
+        -moz-transition: height .2s;
+        -o-transition: height .2s;
+    }
+    .topMenuLi:hover .submenu {
+        height: 93px;
+    }
+
+    .submenuLink:hover {
+        color: rgb(0, 0, 0);    
+        background-color: #dddddd;
+    }
+
