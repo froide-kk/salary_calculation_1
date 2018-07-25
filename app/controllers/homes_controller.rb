@@ -4,7 +4,7 @@ class HomesController < ApplicationController
   # GET /homes
   # GET /homes.json
   def index
-    @home = Home.all
+    @homes = Home.all
   end
 
   # GET /homes/1
@@ -20,10 +20,6 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
   end
-	
-	def homes_params
-		params.require(:home).permit(:emp_id)
-	end
 
   # POST /homes
   # POST /homes.json

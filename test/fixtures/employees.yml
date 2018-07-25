@@ -3,19 +3,25 @@
 one:
   emp_id: MyString
   name: MyString
+  birth: 2018-07-25
   age: 1
-  birth: 2018-07-24
-  residence: MyString
-  family: MyString
+  judgment: MyString
   department: MyString
-  rank: MyString
+  task: MyString
+  residence: MyString
+  fam_spouse: 1
+  fam_except_spouse: 1
+  position: MyString
 
 two:
   emp_id: MyString
   name: MyString
+  birth: 2018-07-25
   age: 1
-  birth: 2018-07-24
-  residence: MyString
-  family: MyString
+  judgment: MyString
   department: MyString
-  rank: MyString
+  task: MyString
+  residence: MyString
+  fam_spouse: 1
+  fam_except_spouse: 1
+  position: MyString

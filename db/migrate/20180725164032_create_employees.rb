@@ -3,12 +3,15 @@ class CreateEmployees < ActiveRecord::Migration[5.2]
     create_table :employees do |t|
       t.string :emp_id
       t.string :name
-      t.integer :age
       t.date :birth
-      t.string :residence
-      t.string :family
+      t.integer :age
+      t.string :judgment
       t.string :department
-      t.string :rank
+      t.string :task
+      t.string :residence
+      t.integer :fam_spouse
+      t.integer :fam_except_spouse
+      t.string :position
 
       t.timestamps
     end
