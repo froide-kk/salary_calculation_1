@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emp_id: MyString
+  name: MyString
+  age: 1
+  pay: 1
+
+two:
+  emp_id: MyString
+  name: MyString
+  age: 1
+  pay: 1
