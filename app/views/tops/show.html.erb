@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Emp:</strong>
+  <%= @top.emp_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @top.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @top.age %>
+</p>
+
+<p>
+  <strong>Pay:</strong>
+  <%= @top.pay %>
+</p>
+
+<%= link_to 'Edit', edit_top_path(@top) %> |
+<%= link_to 'Back', tops_path %>
