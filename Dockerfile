@@ -1,6 +1,6 @@
 FROM ruby:2.4.1
 
-# リポジトリを更新し依存モジュールをインストール
+
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
                        libmysqlclient-dev \
