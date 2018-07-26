@@ -10,6 +10,7 @@
       <th>Birth</th>
       <th>Age</th>
       <th>Judgment</th>
+      <th>Branch</th>
       <th>Department</th>
       <th>Task</th>
       <th>Residence</th>
@@ -28,6 +29,7 @@
         <td><%= employee.birth %></td>
         <td><%= employee.age %></td>
         <td><%= employee.judgment %></td>
+        <td><%= employee.branch %></td>
         <td><%= employee.department %></td>
         <td><%= employee.task %></td>
         <td><%= employee.residence %></td>
@@ -45,3 +47,5 @@
 <br>
 
 <%= link_to 'New Employee', new_employee_path %>
+<br>
+<%= link_to 'Back', homes_path %>

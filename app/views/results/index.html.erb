@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<% @match = true %>
 
 <% @branch = params[:branch] %>
 <% @department = params[:department] %>
+<% @department = params[:task] %>
 <% @emp_id = params[:emp_id] %>
 
 <!-- Menu Bar -->
@@ -11,7 +11,7 @@
 <nav id="topMenu">
     <ul>
         <li class="topMenuLi">
-            <a class="menuLink" href="/employees">Edit Employee</a>            
+            <a class="menuLink" href="/employees">Edit Employee</a>          
         </li>
 
         <li>|</li>
@@ -49,24 +49,28 @@
         <h3>Department : </h3>
         <select name='department'>
             <option value='all' selected>All</option>
-            <option value='s'>Development</option>
-            <option value='tokyo'>Management</option>
-            <option value='fukuoka'>Human Resource</option>          
+            <option value='A'>A</option>
+            <option value='B'>B</option>
+            <option value='C'>C</option>          
+        </select>
+
+	<h3>Task : </h3>
+        <select name='department'>
+            <option value='all' selected>All</option>
+            <option value='development'>Development</option>
+            <option value='management'>Management</option>
+            <option value='human_resource'>Human Resource</option>          
         </select>
 
         <h3>ID : </h3>
-        <input type="text" name="emp_id" placeholder="ALL">		
-            
-        <h3><input type="submit" value="Search"></h3>
-        <br>
-        <br>
+        <input type="text" name="emp_id" value="ALL">		
+        <h3>
+	<input type="submit" value="Search" style="margin-top: 50px; padding: 10px 20px;">
+	</h3>      
     </form> 
 </div>
 
-
-
-
-<% if @match == true %>
+<!-- Search, Results -->
 
 <table class = "type10" align="center">
     <thead>
@@ -76,29 +80,42 @@
             <th>Age</th>
             <th>Birth</th>
             <th>Residence</th>        
-            <th>Department</th>    
-            <th colspan="3">Action</th>
+            <th>Branch</th>  
+            <th>Department</th>          
         </tr>
     </thead>
 
-    <% @employees.each do |employee| %>
+    
+    <% if params[:emp_id] == "ALL" %>
+        <% @employees.each do |employee| %>
         <tbody>
             <tr>
                 <td><%= employee.emp_id %></td>
                 <td><%= employee.name %></td>
                 <td><%= employee.age %></td>
-                <td><%= employee.birth %></td>
-                <td><%= employee.residence %></td>                
-                <td><%= employee.department %></td>                
-                <td><%= link_to 'Show', employee %></td>
-                <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-                <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= employee.birth %></td>                
+                <td><%= employee.residence %></td>
+	        <td><%= employee.branch %></td>                
+                <td><%= employee.department %></td>                            
+            </tr>     
+        </tbody>    
+        <% end %>
+    <% end %>
+       
+    <% @employees.each do |employee| %>
+        <% if not employee.emp_id == params[:emp_id] %>               
+            <% next %>
+        <% end %>
+        <tbody>
+            <tr>
+                <td><%= employee.emp_id %></td>
+                <td><%= employee.name %></td>
+                <td><%= employee.age %></td>
+                <td><%= employee.birth %></td>                
+                <td><%= employee.residence %></td>
+	        	<td><%= employee.branch %></td>                
+                <td><%= employee.department %></td>                            
             </tr>     
         </tbody>    
     <% end %>              
 </table>
-<% else %>
-    <br>
-    <br>
-    <h2 style="text-align: center">No matching data</h2>
-<% end %>
