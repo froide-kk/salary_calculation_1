@@ -1,71 +1,47 @@
-<form method="post" action="/results">
-<nav id="topMenu">
-    <ul>
-        <li class="topMenuLi">
-            <a class="menuLink" href="">Add employee</a>
-        </li>
-        <li>|</li>
-        <li class="topMenuLi">
-            <a class="menuLink" href="">Modify evaluation value</a>
-        </li>
-        <li>|</li>
-        <li class="topMenuLi">
-            <a class="menuLink" href="">Add List</a>
-        </li>
-    </ul>
-</nav>
-    <h3>회사</h3>
-    <select name='branch'>
-        <option value='all' selected>All</option>
-        <option value='kitakyushu'>기타큐슈</option>
-        <option value='tokyo'>도쿄</option>
-        <option value='fukuoka'>후쿠오카</option>          
-    </select>
-    <h3>사원번호</h3>
-    <input type="text" name="emp_id">      
-    <br>
-    <br>           
-    <input type="submit" value="Search">
-
-    <button style="margin-left : 20px">
-    <%= link_to 'Add Employee', new_employee_path %>
-    </button>
-    <br>
-    <br>
-</form> 
+<p id="notice"><%= notice %></p>
 
 <h1>Employees</h1>
 
-<table class = "type10">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Birth</th>
-            <th>Residence</th>
-            <th>Family</th>
-            <th>Department</th>
-            <th>Rank</th>
-            <th colspan="3">Action</th>
-        </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th>Emp</th>
+      <th>Name</th>
+      <th>Birth</th>
+      <th>Age</th>
+      <th>Judgment</th>
+      <th>Department</th>
+      <th>Task</th>
+      <th>Residence</th>
+      <th>Fam spouse</th>
+      <th>Fam except spouse</th>
+      <th>Position</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-    <tbody>
+  <tbody>
     <% @employees.each do |employee| %>
-        <tr>
-            <td><%= employee.emp_id %></td>
-            <td><%= employee.name %></td>
-            <td><%= employee.age %></td>
-            <td><%= employee.birth %></td>
-            <td><%= employee.residence %></td>
-            <td><%= employee.family %></td>
-            <td><%= employee.department %></td>
-            <td><%= employee.rank %></td>
-            <td><%= link_to 'Show', employee %></td>
-            <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-            <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+      <tr>
+        <td><%= employee.emp_id %></td>
+        <td><%= employee.name %></td>
+        <td><%= employee.birth %></td>
+        <td><%= employee.age %></td>
+        <td><%= employee.judgment %></td>
+        <td><%= employee.department %></td>
+        <td><%= employee.task %></td>
+        <td><%= employee.residence %></td>
+        <td><%= employee.fam_spouse %></td>
+        <td><%= employee.fam_except_spouse %></td>
+        <td><%= employee.position %></td>
+        <td><%= link_to 'Show', employee %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-    </tbody>
+  </tbody>
 </table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path %>

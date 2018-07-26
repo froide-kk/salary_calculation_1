@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :ID %>
+    <%= form.label :emp_id %>
     <%= form.text_field :emp_id %>
   </div>
 
@@ -22,23 +22,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :birth %>
+    <%= form.date_select :birth %>
+  </div>
+
+  <div class="field">
     <%= form.label :age %>
     <%= form.number_field :age %>
   </div>
 
   <div class="field">
-    <%= form.label :birth %>
-    <%= form.date_select :birth, :start_year=>1950, :end_year=>2018 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :residence %>
-    <%= form.text_field :residence %>
-  </div>
-
-  <div class="field">
-    <%= form.label :family %>
-    <%= form.text_field :family %>
+    <%= form.label :judgment %>
+    <%= form.text_field :judgment %>
   </div>
 
   <div class="field">
@@ -47,11 +42,31 @@
   </div>
 
   <div class="field">
-    <%= form.label :rank %>
-    <%= form.text_field :rank %>
+    <%= form.label :task %>
+    <%= form.text_field :task %>
+  </div>
+
+  <div class="field">
+    <%= form.label :residence %>
+    <%= form.text_field :residence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fam_spouse %>
+    <%= form.number_field :fam_spouse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fam_except_spouse %>
+    <%= form.number_field :fam_except_spouse %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Add" %>
+    <%= form.submit %>
   </div>
 <% end %>

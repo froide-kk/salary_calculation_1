@@ -17,7 +17,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post employees_url, params: { employee: { age: @employee.age, birth: @employee.birth, department: @employee.department, emp_id: @employee.emp_id, family: @employee.family, name: @employee.name, rank: @employee.rank, residence: @employee.residence } }
+      post employees_url, params: { employee: { age: @employee.age, birth: @employee.birth, department: @employee.department, emp_id: @employee.emp_id, fam_except_spouse: @employee.fam_except_spouse, fam_spouse: @employee.fam_spouse, judgment: @employee.judgment, name: @employee.name, position: @employee.position, residence: @employee.residence, task: @employee.task } }
     end
 
     assert_redirected_to employee_url(Employee.last)
@@ -34,7 +34,7 @@ class EmployeesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update employee" do
-    patch employee_url(@employee), params: { employee: { age: @employee.age, birth: @employee.birth, department: @employee.department, emp_id: @employee.emp_id, family: @employee.family, name: @employee.name, rank: @employee.rank, residence: @employee.residence } }
+    patch employee_url(@employee), params: { employee: { age: @employee.age, birth: @employee.birth, department: @employee.department, emp_id: @employee.emp_id, fam_except_spouse: @employee.fam_except_spouse, fam_spouse: @employee.fam_spouse, judgment: @employee.judgment, name: @employee.name, position: @employee.position, residence: @employee.residence, task: @employee.task } }
     assert_redirected_to employee_url(@employee)
   end
 

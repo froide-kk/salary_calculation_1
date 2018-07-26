@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<% @match = true %>
+
+<% @branch = params[:branch] %>
+<% @department = params[:department] %>
+<% @emp_id = params[:emp_id] %>
+
 <!-- Menu Bar -->
 
 <nav id="topMenu">
@@ -58,19 +64,19 @@
 </div>
 
 
+
+
 <% if @match == true %>
 
-<table class = "type10">
+<table class = "type10" align="center">
     <thead>
         <tr>
             <th>ID</th>
             <th>Name</th>
             <th>Age</th>
             <th>Birth</th>
-            <th>Residence</th>
-            <th>Family</th>
-            <th>Department</th>
-            <th>Rank</th>
+            <th>Residence</th>        
+            <th>Department</th>    
             <th colspan="3">Action</th>
         </tr>
     </thead>
@@ -82,10 +88,8 @@
                 <td><%= employee.name %></td>
                 <td><%= employee.age %></td>
                 <td><%= employee.birth %></td>
-                <td><%= employee.residence %></td>
-                <td><%= employee.family %></td>
-                <td><%= employee.department %></td>
-                <td><%= employee.rank %></td>
+                <td><%= employee.residence %></td>                
+                <td><%= employee.department %></td>                
                 <td><%= link_to 'Show', employee %></td>
                 <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
                 <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -98,4 +102,3 @@
     <br>
     <h2 style="text-align: center">No matching data</h2>
 <% end %>
-

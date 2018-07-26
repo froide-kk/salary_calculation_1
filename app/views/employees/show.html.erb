@@ -11,23 +11,18 @@
 </p>
 
 <p>
-  <strong>Age:</strong>
-  <%= @employee.age %>
-</p>
-
-<p>
   <strong>Birth:</strong>
   <%= @employee.birth %>
 </p>
 
 <p>
-  <strong>Residence:</strong>
-  <%= @employee.residence %>
+  <strong>Age:</strong>
+  <%= @employee.age %>
 </p>
 
 <p>
-  <strong>Family:</strong>
-  <%= @employee.family %>
+  <strong>Judgment:</strong>
+  <%= @employee.judgment %>
 </p>
 
 <p>
@@ -36,8 +31,28 @@
 </p>
 
 <p>
-  <strong>Rank:</strong>
-  <%= @employee.rank %>
+  <strong>Task:</strong>
+  <%= @employee.task %>
+</p>
+
+<p>
+  <strong>Residence:</strong>
+  <%= @employee.residence %>
+</p>
+
+<p>
+  <strong>Fam spouse:</strong>
+  <%= @employee.fam_spouse %>
+</p>
+
+<p>
+  <strong>Fam except spouse:</strong>
+  <%= @employee.fam_except_spouse %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @employee.position %>
 </p>
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |

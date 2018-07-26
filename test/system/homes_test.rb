@@ -14,8 +14,6 @@ class HomesTest < ApplicationSystemTestCase
     visit homes_url
     click_on "New Home"
 
-    fill_in "Name", with: @home.name
-    fill_in "Pay", with: @home.pay
     click_on "Create Home"
 
     assert_text "Home was successfully created"
@@ -26,8 +24,6 @@ class HomesTest < ApplicationSystemTestCase
     visit homes_url
     click_on "Edit", match: :first
 
-    fill_in "Name", with: @home.name
-    fill_in "Pay", with: @home.pay
     click_on "Update Home"
 
     assert_text "Home was successfully updated"

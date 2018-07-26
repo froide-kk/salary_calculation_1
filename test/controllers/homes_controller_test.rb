@@ -17,7 +17,7 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create home" do
     assert_difference('Home.count') do
-      post homes_url, params: { home: { name: @home.name, pay: @home.pay } }
+      post homes_url, params: { home: {  } }
     end
 
     assert_redirected_to home_url(Home.last)
@@ -34,7 +34,7 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update home" do
-    patch home_url(@home), params: { home: { name: @home.name, pay: @home.pay } }
+    patch home_url(@home), params: { home: {  } }
     assert_redirected_to home_url(@home)
   end
 
