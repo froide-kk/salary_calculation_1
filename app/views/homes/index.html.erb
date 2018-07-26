@@ -1,0 +1,29 @@
+<h1> 새 작업 추가 </ h1> 
+
+<% form_for @task do | f | %> 
+<table class = "attributes"> 
+  <tr> 
+    <th> 제목 </ th> 
+    <td> <% = f.text_field : subject %> </ td> 
+  </ tr> 
+  <tr> 
+    <th> 날짜 </ th> 
+    <td> <% = f.date_select : due_date %> </ td> 
+  </ tr> 
+  <tr> 
+    <th> 완료 </ th> 
+    <td> 
+      <% = f.radio_button : done, true %> Yes 
+      <% = f.radio_button : done, false %> No 
+    </ td> 
+  </ tr> 
+  <tr> 
+    <th> 참고 < / th> 
+    <td> <% = f.text_area : note : size =>'40x5'%> </ td> 
+  </ tr> 
+</ table> 
+
+<div class = "submit"> 
+  <% = f.submit '추가'%> 
+</ div>
+<% end %>
