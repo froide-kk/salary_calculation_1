@@ -5,7 +5,7 @@ class ResultsController < ApplicationController
   # GET /results.json
   def index
     @results = Result.all
-	@contents = params[:emp_id]
+    @employees = Employee.all
   end
 
   # GET /results/1
@@ -21,10 +21,6 @@ class ResultsController < ApplicationController
   # GET /results/1/edit
   def edit
   end
-	
-	def results_params
-		params.require(:result).permit(:emp_id)
-	end
 
   # POST /results
   # POST /results.json
@@ -74,6 +70,6 @@ class ResultsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def result_params
-      params.require(:result).permit(:result_id, :name)
+      params.fetch(:result, {})
     end
 end

@@ -18,10 +18,13 @@ class EmployeesTest < ApplicationSystemTestCase
     fill_in "Birth", with: @employee.birth
     fill_in "Department", with: @employee.department
     fill_in "Emp", with: @employee.emp_id
-    fill_in "Family", with: @employee.family
+    fill_in "Fam Except Spouse", with: @employee.fam_except_spouse
+    fill_in "Fam Spouse", with: @employee.fam_spouse
+    fill_in "Judgment", with: @employee.judgment
     fill_in "Name", with: @employee.name
-    fill_in "Rank", with: @employee.rank
+    fill_in "Position", with: @employee.position
     fill_in "Residence", with: @employee.residence
+    fill_in "Task", with: @employee.task
     click_on "Create Employee"
 
     assert_text "Employee was successfully created"
@@ -36,10 +39,13 @@ class EmployeesTest < ApplicationSystemTestCase
     fill_in "Birth", with: @employee.birth
     fill_in "Department", with: @employee.department
     fill_in "Emp", with: @employee.emp_id
-    fill_in "Family", with: @employee.family
+    fill_in "Fam Except Spouse", with: @employee.fam_except_spouse
+    fill_in "Fam Spouse", with: @employee.fam_spouse
+    fill_in "Judgment", with: @employee.judgment
     fill_in "Name", with: @employee.name
-    fill_in "Rank", with: @employee.rank
+    fill_in "Position", with: @employee.position
     fill_in "Residence", with: @employee.residence
+    fill_in "Task", with: @employee.task
     click_on "Update Employee"
 
     assert_text "Employee was successfully updated"

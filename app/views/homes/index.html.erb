@@ -1,44 +1,101 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Home</h1>
+<!-- Menu Bar -->
 
-<%= form_for(@home) do |f| %>
-  <%= f.label :회사 %>
-  <%= f.select :branchs, :branch, ['hukuoka', 'dokyo'], {:selected=>'hukuoka'} %>
+<nav id="topMenu">
+    <ul>
+        <li class="topMenuLi">
+            <a class="menuLink" href="/employees">Edit Employee</a>            
+        </li>
 
-  <%= f.label :사원번호 %>
-  <%= f.text_field :emp_id %>
+        <li>|</li>
 
-  <%= f.submit "조회" %>
-<% end %>
+        <li class="topMenuLi">
+            <a class="menuLink" href="">Edit Column</a>
+            <ul class="submenu">
+                <li>
+                    <a class="submenuLink">Standard</a>
+                </li>
+                <li>
+                    <a class="submenuLink">Point</a>
+                </li>
+                <li>
+                    <a class="submenuLink">Salary</a>
+                </li>             
+            </ul>    
+        </li>
+            
+    </ul>
+</nav>
 
-	<form method="get" action="/results">
-        <h3>회사</h3>
+<div class="title">Home</div>
+
+<div class="search">
+    <form method="get" action="/results">
+        <h3>Branch : </h3>
         <select name='branch'>
             <option value='all' selected>All</option>
-            <option value='kitakyushu'>기타큐슈</option>
-            <option value='tokyo'>도쿄</option>
-            <option value='fukuoka'>후쿠오카</option>          
+            <option value='kitakyushu'>Kitakyushu</option>
+            <option value='tokyo'>Tokyo</option>
+            <option value='fukuoka'>Fukuoka</option>          
         </select>
-        <br>
-        <h3>사원번호</h3>
-        <input type="text" name="emp_id">
-        </br>
+        
+        <h3>Department : </h3>
+        <select name='department'>
+            <option value='all' selected>All</option>
+            <option value='s'>Development</option>
+            <option value='tokyo'>Management</option>
+            <option value='fukuoka'>Human Resource</option>          
+        </select>
 
-		<br>
-<!--
-        <h3>기간</h3>        
-            <input type="date" name="from" min="2016-03-01" max="2016-12-31">
-            ~ 
-            <input type="date" name="to" min="2018-03-01" max="2018-06-30">
-			<br>
-			<br>           -->
-            <input type="submit" value="조회">
-   			<br>
-			<br>
-            <!--<button><%= link_to 'Search', results_path %></button>-->
-			<br>
-			<br>
-      </form> 
-	<%= link_to 'Add Employee', add_employees_path %>
+        <h3>ID : </h3>
+        <input type="text" name="emp_id" placeholder="ALL">		
+            
+        <h3><input type="submit" value="Search"></h3>
+        <br>
+        <br>
+    </form> 
+</div>
+
+
+<% if @match == true %>
+
+<table class = "type10">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Birth</th>
+            <th>Residence</th>
+            <th>Family</th>
+            <th>Department</th>
+            <th>Rank</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+
+    <% @employees.each do |employee| %>
+        <tbody>
+            <tr>
+                <td><%= employee.emp_id %></td>
+                <td><%= employee.name %></td>
+                <td><%= employee.age %></td>
+                <td><%= employee.birth %></td>
+                <td><%= employee.residence %></td>
+                <td><%= employee.family %></td>
+                <td><%= employee.department %></td>
+                <td><%= employee.rank %></td>
+                <td><%= link_to 'Show', employee %></td>
+                <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+                <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>     
+        </tbody>    
+    <% end %>              
+</table>
+<% else %>
+    <br>
+    <br>
+    <h2 style="text-align: center">No matching data</h2>
+<% end %>
 

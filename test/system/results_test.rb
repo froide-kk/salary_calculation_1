@@ -14,8 +14,6 @@ class ResultsTest < ApplicationSystemTestCase
     visit results_url
     click_on "New Result"
 
-    fill_in "Name", with: @result.name
-    fill_in "Result", with: @result.result_id
     click_on "Create Result"
 
     assert_text "Result was successfully created"
@@ -26,8 +24,6 @@ class ResultsTest < ApplicationSystemTestCase
     visit results_url
     click_on "Edit", match: :first
 
-    fill_in "Name", with: @result.name
-    fill_in "Result", with: @result.result_id
     click_on "Update Result"
 
     assert_text "Result was successfully updated"
