@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :emp_id %>
+    <%= form.label :Employee　ID %>
     <%= form.text_field :emp_id %>
   </div>
 
@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :birth %>
-    <%= form.date_select :birth %>
+    <%= form.date_select :birth, :start_year=>1950, :end_year=>2018 %>
   </div>
 
   <div class="field">
     <%= form.label :age %>
-    <%= form.number_field :age %>
+    <%= form.number_field :age, :min=>1, :max=>100 %>
   </div>
 
   <div class="field">
@@ -37,33 +37,38 @@
   </div>
 
   <div class="field">
+    <%= form.label :branch %>
+    <%= form.select :branch, ["Kitakyushu", "Tokyo", "Fukuoka"]%>
+  </div>
+
+  <div class="field">
     <%= form.label :department %>
-    <%= form.text_field :department %>
+    <%= form.select :department, ["A", "B", "C"]%>
   </div>
 
   <div class="field">
     <%= form.label :task %>
-    <%= form.text_field :task %>
+    <%= form.select :task, ["Development", "Management", "Human Resource"]%>
   </div>
 
   <div class="field">
     <%= form.label :residence %>
-    <%= form.text_field :residence %>
+    <%= form.select :branch, ["Kitakyushu", "Tokyo", "Fukuoka"]%>
   </div>
 
   <div class="field">
     <%= form.label :fam_spouse %>
-    <%= form.number_field :fam_spouse %>
+    <%= form.number_field :fam_spouse, :min=>0, :max=>1 %>
   </div>
 
   <div class="field">
     <%= form.label :fam_except_spouse %>
-    <%= form.number_field :fam_except_spouse %>
+    <%= form.number_field :fam_except_spouse, :min=>0, :max=>9 %>
   </div>
 
   <div class="field">
     <%= form.label :position %>
-    <%= form.text_field :position %>
+    <%= form.select :position, ["Manager", "Leader", "Assistant Leader", "Nomarl Staff"]%>
   </div>
 
   <div class="actions">

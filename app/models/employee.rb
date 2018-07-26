@@ -1,3 +1,3 @@
 class Employee < ApplicationRecord
-    belongs_to :results
+    belongs_to :results, :optional => true
 end
