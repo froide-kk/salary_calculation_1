@@ -5,7 +5,7 @@
 <nav id="topMenu">
     <ul>
         <li class="topMenuLi">
-            <a class="menuLink" href="/employees">Edit Employee</a>            
+            <a class="menuLink" href="/employees">Edit Employee</a>
         </li>
 
         <li>|</li>
@@ -14,17 +14,17 @@
             <a class="menuLink" href="">Edit Column</a>
             <ul class="submenu">
                 <li>
-                    <a class="submenuLink">Standard</a>
+                    <a class="submenuLink" href="">Standard</a>
                 </li>
                 <li>
-                    <a class="submenuLink">Point</a>
+                    <a class="submenuLink" href="">Point</a>
                 </li>
                 <li>
-                    <a class="submenuLink">Salary</a>
-                </li>             
-            </ul>    
+                    <a class="submenuLink" href="">Salary</a>
+                </li>
+            </ul>
         </li>
-            
+
     </ul>
 </nav>
 
@@ -34,33 +34,33 @@
     <form method="get" action="/results">
         <h3>Branch : </h3>
         <select name='branch'>
-            <option value='all' selected>All</option>
+            <option value='ALL' selected>All</option>
             <option value='kitakyushu'>Kitakyushu</option>
             <option value='tokyo'>Tokyo</option>
-            <option value='fukuoka'>Fukuoka</option>          
+            <option value='fukuoka'>Fukuoka</option>
         </select>
-        
+
         <h3>Department : </h3>
         <select name='department'>
-            <option value='all' selected>All</option>
+            <option value='ALL' selected>All</option>
             <option value='A'>A</option>
             <option value='B'>B</option>
-            <option value='C'>C</option>          
+            <option value='C'>C</option>
         </select>
 
 	<h3>Task : </h3>
-        <select name='department'>
-            <option value='all' selected>All</option>
+        <select name='task'>
+            <option value='ALL' selected>All</option>
             <option value='development'>Development</option>
             <option value='management'>Management</option>
-            <option value='human_resource'>Human Resource</option>          
+            <option value='human_resource'>Human Resource</option>
         </select>
 
         <h3>ID : </h3>
-        <input type="text" name="emp_id" value="ALL">		
-        <br>  
+        <input type="text" name="emp_id" value="ALL">
+        <br>
         <h3>
 	<input type="submit" value="Search" style="margin-top: 50px; padding: 10px 20px;">
-	</h3>      
-    </form> 
+	</h3>
+    </form>
 </div>
