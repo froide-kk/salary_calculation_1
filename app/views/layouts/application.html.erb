@@ -10,6 +10,33 @@
   </head>
 
   <body>
+    <!-- Menu Bar -->
+
+    <nav id="topMenu">
+        <ul>
+            <li class="topMenuLi">
+                <a class="menuLink" href="/employees">Edit Employee</a>
+            </li>
+
+            <li>|</li>
+
+            <li class="topMenuLi">
+                <a class="menuLink" href="">Edit Column</a>
+                <ul class="submenu">
+                    <li>
+                        <a class="submenuLink" href="/standards">Standard</a>
+                    </li>
+                    <li>
+                        <a class="submenuLink" href="/points">Point</a>
+                    </li>
+                    <li>
+                        <a class="submenuLink" href="/salaries">Salary</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

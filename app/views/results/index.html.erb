@@ -7,35 +7,6 @@
 <% @emp_id = params[:emp_id] %>
 
 
-
-<!-- Menu Bar -->
-
-<nav id="topMenu">
-    <ul>
-        <li class="topMenuLi">
-            <a class="menuLink" href="/employees">Edit Employee</a>
-        </li>
-
-        <li>|</li>
-
-        <li class="topMenuLi">
-            <a class="menuLink" href="">Edit Column</a>
-            <ul class="submenu">
-                <li>
-                    <a class="submenuLink" href="">Standard</a>
-                </li>
-                <li>
-                    <a class="submenuLink" href="">Point</a>
-                </li>
-                <li>
-                    <a class="submenuLink" href="">Salary</a>
-                </li>
-            </ul>
-        </li>
-
-    </ul>
-</nav>
-
 <div class="title">Home</div>
 
 <div class="search">
@@ -56,7 +27,7 @@
             <option value='C'>C</option>
         </select>
 
-	<h3>Task : </h3>
+        <h3>Task : </h3>
         <select name='task'>
             <option value='ALL' selected>All</option>
             <option value='development'>Development</option>
@@ -66,12 +37,12 @@
 
         <h3>ID : </h3>
         <input type="text" name="emp_id" value="ALL">
+        <br>
         <h3>
-	<input type="submit" value="Search" style="margin-top: 50px; padding: 10px 20px;">
-	</h3>
+      	<input type="submit" value="Search" style="margin-top: 50px; padding: 10px 20px;">
+      	</h3>
     </form>
 </div>
-
 <!-- Search, Results -->
 
 <% sql_select = "SELECT * " %>
@@ -110,6 +81,10 @@
 <%= sql %>
 
 <% results = Employee.connection.select_all(sql) %>
+
+<% if results.empty? %>
+    <h1 style="text-align: center">No Matching Data<h1>
+<% else %>
 <table class = "type10" align="center">
     <thead>
         <tr>
@@ -120,7 +95,7 @@
             <th>Residence</th>
             <th>Branch</th>
             <th>Department</th>
-            <th>Task</th>
+            <th>Task</th   >
             <th>Position</th>
             <th>Judgment</th>
             <th>Fam Spouse</th>
@@ -146,3 +121,4 @@
     </tbody>
     <% end %>
 </table>
+<% end %>

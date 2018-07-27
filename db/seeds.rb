@@ -9,7 +9,6 @@
 Model_name.create(culom_name :'data1', culom_name: 'data2') #lecord 1 line
 
 Model_name.create(culom_name :'data1', culom_name: 'data2') #lecord 1 line
-
 .
 .
 #last lecord
