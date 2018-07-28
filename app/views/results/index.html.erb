@@ -81,9 +81,9 @@
 
 <%= sql %>
 
+<!-- "select * from employees right outer join points on employees.emp_id = points.emp_id" -->
 
-
-<% results = Employee.joins(:point, :salary).connection.select_all("select * from employees right outer join points on employees.emp_id = points.emp_id") %>
+<% results = Employee.joins(:point, :salary).connection.select_all(sql) %>
 
 <% if results.empty? %>
     <h1 style="text-align: center">No Matching Data<h1>
