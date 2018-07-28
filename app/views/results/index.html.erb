@@ -1,12 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 
-<% @branch = params[:branch] %>
-<% @department = params[:department] %>
-<% @task = params[:task] %>
-<% @emp_id = params[:emp_id] %>
-
-
 <div class="title">Home</div>
 
 <div class="search">
@@ -38,54 +32,123 @@
 
         <h3>ID : </h3>
         <input type="text" name="emp_id" value="ALL">
+
         <br>
-        <h3>
-      	<input type="submit" value="Search" style="margin-top: 50px; padding: 10px 20px;">
-      	</h3>
+        <h3><input type="submit" value="Search" style="margin: 50px 0px 0px -30px; padding: 10px 20px; cursor:pointer"></h3>
     </form>
 </div>
+
+<!-- search option -->
+
+<details class="search_option">
+    <summary style="cursor:pointer">Search Option</summary>
+    <div style="text-align:left">
+        <ul class="">
+        <b>Employee</b>
+        <br />
+        <input type="checkbox" name="box1" /> Employee ID
+        <br />
+        <input type="checkbox" name="box1" /> Branch
+        <br />
+        <input type="checkbox" name="box1" /> Name
+        <br />
+        <input type="checkbox" name="box1" /> Birth
+        <br />
+        <input type="checkbox" name="box1" /> Age
+        <br />
+        <input type="checkbox" name="box1" /> Judgment
+        <br />
+        <input type="checkbox" name="box1" /> Task
+        <br />
+        <input type="checkbox" name="box1" /> Department
+        <br />
+        <input type="checkbox" name="box1" /> Residence
+        <br />
+        <input type="checkbox" name="box1" /> Family spouse
+        <br />
+        <input type="checkbox" name="box1" /> Family except spouse
+        <br />
+        <input type="checkbox" name="box1" /> Position
+        <br />
+        </ul>
+
+        <ul>
+        <b>Point</b>
+        <br />
+        <input type="checkbox" name="box1" /> Employee ID
+        <br />
+        <input type="checkbox" name="box1" /> Age adjust
+        <br />
+        <input type="checkbox" name="box1" /> ISMS
+        <br />
+        <input type="checkbox" name="box1" /> Healty
+        <br />
+        <input type="checkbox" name="box1" /> Small group
+        <br />
+        <input type="checkbox" name="box1" /> Evaluation management
+        <br />
+        <input type="checkbox" name="box1" /> Evaluation technology
+        <br />
+        <input type="checkbox" name="box1" /> Adjustment
+        <br />
+        <input type="checkbox" name="box1" /> Short work
+        <br />
+        <input type="checkbox" name="box1" /> Over time
+        <br />
+        </ul>
+
+        <ul>
+        <b>Salary</b>
+        <br />
+        <input type="checkbox" name="box1" /> Employee ID
+        <br />
+        <input type="checkbox" name="box1" /> Standard salary
+        <br />
+        <input type="checkbox" name="box1" /> Ability salary
+        <br />
+        <input type="checkbox" name="box1" /> Position salary
+        <br />
+        <input type="checkbox" name="box1" /> Task salary
+        <br />
+        <input type="checkbox" name="box1" /> Praise salary
+        <br />
+        <input type="checkbox" name="box1" /> Residence support salary
+        <br />
+        <input type="checkbox" name="box1" /> Basic salary
+        <br />
+        <input type="checkbox" name="box1" /> Hour salary
+        <br />
+        <input type="checkbox" name="box1" /> Over hour salary
+        <br />
+        <input type="checkbox" name="box1" /> Over salary
+        <br />
+        <input type="checkbox" name="box1" /> Family salary
+        <br />
+        <input type="checkbox" name="box1" /> Total salary
+        <br />
+        <input type="checkbox" name="box1" /> Last total salary
+        <br />
+        <input type="checkbox" name="box1" /> Difference total salary
+        <br />
+        <input type="checkbox" name="box1" /> Rate
+        <br />
+        <input type="checkbox" name="box1" /> Last hour salary
+        <br />
+        <input type="checkbox" name="box1" /> Difference hour salary
+        <br />
+        <input type="checkbox" name="box1" /> Last rate
+        <br />
+        </ul>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</details>
+
+<br>
+
 <!-- Search, Results -->
 
-<% sql_select = "SELECT * " %>
-<% sql_from = "FROM employees" %>
-<% sql_where = " WHERE " %>
-<% is_all  = true %>
 
-<% if not params[:branch] == "ALL" %>
-    <% sql_where << "branch = " + "'" + @branch + "', "  %>
-    <% is_all = false %>
-<% end %>
-
-<% if not params[:department] == "ALL" %>
-    <% sql_where << "department = " + "'" + @department + "', "  %>
-    <% is_all = false %>
-<% end %>
-
-<% if not params[:task] == "ALL" %>
-    <% sql_where << "task = " + "'" + @task + "', "  %>
-    <% is_all = false %>
-<% end %>
-
-<% if not params[:emp_id] == "ALL" %>
-    <% sql_where << "emp_id = " + "'" + @emp_id + "', "  %>
-    <% is_all = false %>
-<% end %>
-
-<% if is_all %>
-    <% sql_where.clear %>
-<% else %>
-    <% sql_where = sql_where[0...-2] %>
-<% end %>
-
-<% sql = sql_select + sql_from + sql_where %>
-
-<%= sql %>
-
-<!-- "select * from employees right outer join points on employees.emp_id = points.emp_id" -->
-
-<% results = Employee.joins(:point, :salary).connection.select_all(sql) %>
-
-<% if results.empty? %>
+<% if not @results.exists? %>
     <h1 style="text-align: center">No Matching Data<h1>
 <% else %>
 
@@ -107,10 +170,10 @@
             <th>ISMS</th>
         </tr>
     </thead>
-    <% results.each do |result| %>
+    <% @results.each do |result| %>
     <tbody>
         <tr>
-            <td><%= result['emp_id'] %></td>
+            <td><%= result['emp_id']%></td>
             <td><%= result['name'] %></td>
             <td><%= result['age'] %></td>
             <td><%= result['birth'] %></td>

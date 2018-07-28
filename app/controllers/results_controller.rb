@@ -12,14 +12,47 @@ before_action :set_result, only: [:show, :edit, :update, :destroy]
 # GET /results
 # GET /results.json
 def search
-    return @emp_id
-
-    @records = Employee.joins(:point, :salary).all
+    @records = Employee.all
 end
 
 def index
-    @employees = Employee.joins(:point, :salary).all
+    branch = params[:branch]
+    department = params[:department]
+    task = params[:task]
+    emp_id = params[:emp_id]
+
+    search_list = [branch, department, task, emp_id]
+
+    @results = Employee.all
+
+    if !(branch == "ALL")
+        @results = @results.where("branch = ?", branch)
+    end
+
+    if !(department == "ALL")
+        @results = @results.where("department = ?", department)
+    end
+
+    if !(task == "ALL")
+        @results = @results.where("task = ?", task)
+    end
+
+    if !(emp_id == "ALL")
+        @results = @results.where("emp_id = ?", emp_id)
+    end
+
+#    why??
+
+#    for index in 0 ... search_list.size
+#        if !(search_list[index] == "ALL")
+#            @results = @results.where("branch = ?", search_list[index])
+#        end
+#    end
+
 end
+    #search option   joins(:point, :salary).
+
+
 
 # GET /results/1
 # GET /results/1.json

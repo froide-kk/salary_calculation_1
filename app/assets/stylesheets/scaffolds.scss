@@ -1,7 +1,14 @@
 .search
 {
     text-align: center;
-    margin: 100px 0px 100px 0px;
+    margin: 100px 0px 0px 0px;
+    width: auto;
+}
+
+.search_option
+{
+    text-align: center;
+    margin: 50px 0px 50px 0px;
     width: auto;
 }
 
@@ -227,4 +234,42 @@ table.type10 .even
 {
     color: rgb(0, 0, 0);
     background-color: #dddddd;
+}
+
+
+button{
+  background:rgb(224, 118, 57);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:45px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:rgb(212, 100, 35);
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(255, 0, 0);
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
