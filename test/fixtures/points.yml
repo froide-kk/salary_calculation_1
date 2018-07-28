@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emp_id: MyString
+  age_ad: 1
+  isms: 1
+  health: 1
+  small_group: 1
+  eval_mgm: 1
+  eval_tec: 1
+  adjustment: 1
+  is_short_work: false
+  overtime: 1
+
+two:
+  emp_id: MyString
+  age_ad: 1
+  isms: 1
+  health: 1
+  small_group: 1
+  eval_mgm: 1
+  eval_tec: 1
+  adjustment: 1
+  is_short_work: false
+  overtime: 1

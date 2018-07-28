@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Employee Point</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Emp</th>
+      <th>Age ad</th>
+      <th>Isms</th>
+      <th>Health</th>
+      <th>Small group</th>
+      <th>Eval mgm</th>
+      <th>Eval tec</th>
+      <th>Adjustment</th>
+      <th>Is short work</th>
+      <th>Overtime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @points.each do |point| %>
+      <tr>
+        <td><%= point.emp_id %></td>
+        <td><%= point.age_ad %></td>
+        <td><%= point.isms %></td>
+        <td><%= point.health %></td>
+        <td><%= point.small_group %></td>
+        <td><%= point.eval_mgm %></td>
+        <td><%= point.eval_tec %></td>
+        <td><%= point.adjustment %></td>
+        <td><%= point.is_short_work %></td>
+        <td><%= point.overtime %></td>
+        <td><%= link_to 'Show', point %></td>
+        <td><%= link_to 'Edit', edit_point_path(point) %></td>
+        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Point', new_point_path %>

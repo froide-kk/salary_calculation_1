@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Task Std Vals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task name</th>
+      <th>Task val</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_std_vals.each do |task_std_val| %>
+      <tr>
+        <td><%= task_std_val.task_name %></td>
+        <td><%= task_std_val.task_val %></td>
+        <td><%= link_to 'Show', task_std_val %></td>
+        <td><%= link_to 'Edit', edit_task_std_val_path(task_std_val) %></td>
+        <td><%= link_to 'Destroy', task_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task Std Val', new_task_std_val_path %>

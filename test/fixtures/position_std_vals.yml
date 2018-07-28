@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position_name: MyString
+  ability_val: 1
+  max_overtime: 1
+  pos_val: 1
+  pos_inc_val: 1
+  pos_std_age: 1
+
+two:
+  position_name: MyString
+  ability_val: 1
+  max_overtime: 1
+  pos_val: 1
+  pos_inc_val: 1
+  pos_std_age: 1

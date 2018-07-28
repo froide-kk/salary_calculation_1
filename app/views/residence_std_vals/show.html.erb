@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Residence name:</strong>
+  <%= @residence_std_val.residence_name %>
+</p>
+
+<p>
+  <strong>Residence spt val:</strong>
+  <%= @residence_std_val.residence_spt_val %>
+</p>
+
+<%= link_to 'Edit', edit_residence_std_val_path(@residence_std_val) %> |
+<%= link_to 'Back', residence_std_vals_path %>

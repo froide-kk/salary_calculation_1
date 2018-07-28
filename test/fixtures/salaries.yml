@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emp_id: MyString
+  standard_sal: 1
+  ability_sal: 1
+  position_sal: 1
+  task_sal: 1
+  praise_sal: 1
+  residence_spt_sal: 1
+  basic_sal: 1
+  hour_sal: 1
+  over_hour_sal: 1
+  over_sal: 1
+  fam_sal: 1
+  total_sal: 1
+  last_total_sal: 1
+  diff_total_sal: 1
+  rate: 1.5
+  last_hour_sal: 1
+  diff_hour_sal: 1
+  last_rate: 1.5
+
+two:
+  emp_id: MyString
+  standard_sal: 1
+  ability_sal: 1
+  position_sal: 1
+  task_sal: 1
+  praise_sal: 1
+  residence_spt_sal: 1
+  basic_sal: 1
+  hour_sal: 1
+  over_hour_sal: 1
+  over_sal: 1
+  fam_sal: 1
+  total_sal: 1
+  last_total_sal: 1
+  diff_total_sal: 1
+  rate: 1.5
+  last_hour_sal: 1
+  diff_hour_sal: 1
+  last_rate: 1.5

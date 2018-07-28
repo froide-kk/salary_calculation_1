@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Etc Std Vals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Praise val</th>
+      <th>Mon avg worktime</th>
+      <th>Mon short worktime</th>
+      <th>Holiday val</th>
+      <th>Std salary val</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @etc_std_vals.each do |etc_std_val| %>
+      <tr>
+        <td><%= etc_std_val.praise_val %></td>
+        <td><%= etc_std_val.mon_avg_worktime %></td>
+        <td><%= etc_std_val.mon_short_worktime %></td>
+        <td><%= etc_std_val.holiday_val %></td>
+        <td><%= etc_std_val.std_salary_val %></td>
+        <td><%= link_to 'Show', etc_std_val %></td>
+        <td><%= link_to 'Edit', edit_etc_std_val_path(etc_std_val) %></td>
+        <td><%= link_to 'Destroy', etc_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Etc Std Val', new_etc_std_val_path %>

@@ -1,0 +1,2 @@
+module EtcStdValsHelper
+end
