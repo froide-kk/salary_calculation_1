@@ -14,25 +14,26 @@
         <h3>Branch : </h3>
         <select name='branch'>
             <option value='ALL' selected>All</option>
-            <option value='kitakyushu'>Kitakyushu</option>
-            <option value='tokyo'>Tokyo</option>
-            <option value='fukuoka'>Fukuoka</option>
+            <option value='Kitakyushu'>Kitakyushu</option>
+            <option value='Tokyo'>Tokyo</option>
+            <option value='Fukuoka'>Fukuoka</option>
         </select>
 
         <h3>Department : </h3>
         <select name='department'>
             <option value='ALL' selected>All</option>
-            <option value='A'>A</option>
-            <option value='B'>B</option>
-            <option value='C'>C</option>
+            <option value='F-Labo'>F-Labo</option>
+            <option value='Growth Hack Ata'>Growth Hack Ata</option>
+            <option value='Game Studio'>Game Studio</option>
+            <option value='Teqbase'>Teqbase</option>
         </select>
 
         <h3>Task : </h3>
         <select name='task'>
             <option value='ALL' selected>All</option>
-            <option value='development'>Development</option>
-            <option value='management'>Management</option>
-            <option value='human_resource'>Human Resource</option>
+            <option value='Development'>Development</option>
+            <option value='Management'>Management</option>
+            <option value='Human Resource'>Human Resource</option>
         </select>
 
         <h3>ID : </h3>
@@ -80,11 +81,14 @@
 
 <%= sql %>
 
-<% results = Employee.connection.select_all(sql) %>
+
+
+<% results = Employee.joins(:point, :salary).connection.select_all("select * from employees right outer join points on employees.emp_id = points.emp_id") %>
 
 <% if results.empty? %>
     <h1 style="text-align: center">No Matching Data<h1>
 <% else %>
+
 <table class = "type10" align="center">
     <thead>
         <tr>
@@ -100,6 +104,7 @@
             <th>Judgment</th>
             <th>Fam Spouse</th>
             <th>Fam Except Spouse</th>
+            <th>ISMS</th>
         </tr>
     </thead>
     <% results.each do |result| %>
@@ -117,6 +122,7 @@
             <td><%= result['judgment'] %></td>
             <td><%= result['fam_spouse'] %></td>
             <td><%= result['fam_except_spouse'] %></td>
+            <td><%= result['isms'] %></td>
         </tr>
     </tbody>
     <% end %>

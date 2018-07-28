@@ -5,4 +5,6 @@ class Employee < ApplicationRecord
     has_one :task_std_val
     has_one :residence_std_val
     has_one :etc_std_val
+    has_one :point
+    has_one :salary
 end

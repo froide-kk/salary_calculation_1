@@ -2,7 +2,7 @@ class ResultsController < ApplicationController
 before_action :set_result, only: [:show, :edit, :update, :destroy]
 
 
-#def match(employee)    
+#def match(employee)
 #    if not employee.emp_id == params[:emp_id]
 #        @match = false
 #    end
@@ -11,9 +11,10 @@ before_action :set_result, only: [:show, :edit, :update, :destroy]
 
 # GET /results
 # GET /results.json
+
+
 def index
-    @results = Result.all
-    @employees = Employee.all
+    @employees = Employee.joins(:point, :salary).all
 end
 
 # GET /results/1
