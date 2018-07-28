@@ -11,7 +11,11 @@ before_action :set_result, only: [:show, :edit, :update, :destroy]
 
 # GET /results
 # GET /results.json
+def search
+    return @emp_id
 
+    @records = Employee.joins(:point, :salary).all
+end
 
 def index
     @employees = Employee.joins(:point, :salary).all
