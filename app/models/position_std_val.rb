@@ -1,3 +1,3 @@
 class PositionStdVal < ApplicationRecord
-    belongs_to :standard
+    belongs_to :standard, :optional => true
 end

@@ -23,119 +23,124 @@ Model_name.create(culom_name :'data1', culom_name: 'data2') #lecord 1 line
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
 # employee
 
-Employee.create(emp_id: '1', branch: 'Fukuoka', name: 'president1', birth: '1972-09-08', age: '45', judgment: 'NO.2', task: '', department: '', residence: '', fam_spouse: '0', fam_except_spouse: '0', position: '')
+Employee.create(emp_id: '1', branch: '福岡', name: '社長1', birth: '1972-09-08', age: '45', judgment: '２号', task: '', department: '', residence: '', fam_spouse: '0', fam_except_spouse: '0', position: '')
 
-Employee.create(emp_id: '2', branch: 'Fukuoka', name: 'employee1', birth: '1978-06-15', age: '39', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '3', position: 'Manager')
+Employee.create(emp_id: '2', branch: '福岡', name: '社員1', birth: '1978-06-15', age: '39', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '3', position: 'マネージャー')
 
-Employee.create(emp_id: '3', branch: 'Fukuoka', name: 'employee2', birth: '1981-11-26', age: '36', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '3', position: 'Manager')
+Employee.create(emp_id: '3', branch: '福岡', name: '社員2', birth: '1981-11-26', age: '36', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '3', position: 'マネージャー')
 
-Employee.create(emp_id: '4', branch: 'Fukuoka', name: 'employee3', birth: '1979-03-09', age: '39', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Manager')
+Employee.create(emp_id: '4', branch: '福岡', name: '社員3', birth: '1979-03-09', age: '39', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'マネージャー')
 
-Employee.create(emp_id: '5', branch: 'Fukuoka', name: 'employee4', birth: '1984-06-04', age: '33', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Tokyo', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '5', branch: '福岡', name: '社員4', birth: '1984-06-04', age: '33', judgment: '折半', task: '開発', department: 'F-Labo', residence: '東京', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '6', branch: 'Fukuoka', name: 'employee5', birth: '1970-11-25', age: '47', judgment: 'NO.2', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '2', position: 'Manager')
+Employee.create(emp_id: '6', branch: '福岡', name: '社員5', birth: '1970-11-25', age: '47', judgment: '２号', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '2', position: 'マネージャー')
 
-Employee.create(emp_id: '7', branch: 'Fukuoka', name: 'employee6', birth: '1980-12-26', age: '37', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '1', position: 'Manager')
+Employee.create(emp_id: '7', branch: '福岡', name: '社員6', birth: '1980-12-26', age: '37', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '1', position: 'マネージャー')
 
-Employee.create(emp_id: '8', branch: 'Fukuoka', name: 'employee7', birth: '1984-04-28', age: '33', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Leader')
+Employee.create(emp_id: '8', branch: '福岡', name: '社員7', birth: '1984-04-28', age: '33', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'リーダー')
 
-Employee.create(emp_id: '9', branch: 'Fukuoka', name: 'employee8', birth: '1978-11-22', age: '39', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Leader')
+Employee.create(emp_id: '9', branch: '福岡', name: '社員8', birth: '1978-11-22', age: '39', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'リーダー')
 
-Employee.create(emp_id: '10', branch: 'Fukuoka', name: 'employee9', birth: '1981-04-19', age: '36', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '1', position: 'Assistant Leader')
+Employee.create(emp_id: '10', branch: '福岡', name: '社員9', birth: '1981-04-19', age: '36', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '1', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '11', branch: 'Fukuoka', name: 'employee10', birth: '1986-11-17', age: '31', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Manager')
+Employee.create(emp_id: '11', branch: '福岡', name: '社員10', birth: '1986-11-17', age: '31', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'マネージャー')
 
-Employee.create(emp_id: '12', branch: 'Fukuoka', name: 'employee11', birth: '1984-08-01', age: '33', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '2', position: 'Assistant Leader')
+Employee.create(emp_id: '12', branch: '福岡', name: '社員11', birth: '1984-08-01', age: '33', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '2', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '13', branch: 'Fukuoka', name: 'employee12', birth: '1985-07-29', age: '32', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '13', branch: '福岡', name: '社員12', birth: '1985-07-29', age: '32', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '14', branch: 'Fukuoka', name: 'employee13', birth: '1989-04-03', age: '28', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '3', position: 'Leader')
+Employee.create(emp_id: '14', branch: '福岡', name: '社員13', birth: '1989-04-03', age: '28', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '3', position: 'リーダー')
 
-Employee.create(emp_id: '15', branch: 'Fukuoka', name: 'employee14', birth: '1989-08-04', age: '28', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Leader')
+Employee.create(emp_id: '15', branch: '福岡', name: '社員14', birth: '1989-08-04', age: '28', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'リーダー')
 
-Employee.create(emp_id: '16', branch: 'Fukuoka', name: 'employee15', birth: '1991-10-07', age: '26', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '16', branch: '福岡', name: '社員15', birth: '1991-10-07', age: '26', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '17', branch: 'Fukuoka', name: 'employee16', birth: '1983-08-18', age: '34', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '17', branch: '福岡', name: '社員16', birth: '1983-08-18', age: '34', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '18', branch: 'Fukuoka', name: 'employee17', birth: '1992-11-05', age: '25', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '18', branch: '福岡', name: '社員17', birth: '1992-11-05', age: '25', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '19', branch: 'Fukuoka', name: 'employee18', birth: '1993-07-30', age: '24', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '19', branch: '福岡', name: '社員18', birth: '1993-07-30', age: '24', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '20', branch: 'Fukuoka', name: 'employee19', birth: '1980-09-26', age: '37', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '20', branch: '福岡', name: '社員19', birth: '1980-09-26', age: '37', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '21', branch: 'Fukuoka', name: 'employee20', birth: '1994-03-04', age: '24', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '21', branch: '福岡', name: '社員20', birth: '1994-03-04', age: '24', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '22', branch: 'Fukuoka', name: 'employee21', birth: '1968-10-28', age: '49', judgment: 'NO.2', task: 'Management', department: 'Growth Hack Ata', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '1', position: 'Leader')
+Employee.create(emp_id: '22', branch: '福岡', name: '社員21', birth: '1968-10-28', age: '49', judgment: '２号', task: '管理', department: 'Growth Hack Ata', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '1', position: 'リーダー')
 
-Employee.create(emp_id: '23', branch: 'Fukuoka', name: 'employee22', birth: '1982-05-23', age: '35', judgment: 'Half', task: 'Management', department: 'Growth Hack Ata', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '23', branch: '福岡', name: '社員22', birth: '1982-05-23', age: '35', judgment: '折半', task: '管理', department: 'Growth Hack Ata', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '24', branch: 'Fukuoka', name: 'employee23', birth: '1984-11-28', age: '33', judgment: 'Half', task: 'Human Resource', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '2', position: 'Leader')
+Employee.create(emp_id: '24', branch: '福岡', name: '社員23', birth: '1984-11-28', age: '33', judgment: '折半', task: '人事調達', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '2', position: 'リーダー')
 
-Employee.create(emp_id: '25', branch: 'Fukuoka', name: 'employee24', birth: '1985-01-04', age: '33', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '25', branch: '福岡', name: '社員24', birth: '1985-01-04', age: '33', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '26', branch: 'Fukuoka', name: 'employee25', birth: '1994-01-30', age: '24', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '26', branch: '福岡', name: '社員25', birth: '1994-01-30', age: '24', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '27', branch: 'Fukuoka', name: 'employee26', birth: '1995-12-03', age: '22', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '27', branch: '福岡', name: '社員26', birth: '1995-12-03', age: '22', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '28', branch: 'Fukuoka', name: 'employee27', birth: '1995-11-21', age: '22', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '28', branch: '福岡', name: '社員27', birth: '1995-11-21', age: '22', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '29', branch: 'Fukuoka', name: 'employee28', birth: '1995-11-13', age: '22', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '29', branch: '福岡', name: '社員28', birth: '1995-11-13', age: '22', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '30', branch: 'Fukuoka', name: 'employee29', birth: '1990-02-28', age: '28', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '30', branch: '福岡', name: '社員29', birth: '1990-02-28', age: '28', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '31', branch: 'Fukuoka', name: 'employee30', birth: '1989-06-05', age: '28', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '31', branch: '福岡', name: '社員30', birth: '1989-06-05', age: '28', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '32', branch: 'Fukuoka', name: 'employee31', birth: '1992-11-17', age: '25', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '32', branch: '福岡', name: '社員31', birth: '1992-11-17', age: '25', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '33', branch: 'Fukuoka', name: 'employee32', birth: '1996-06-26', age: '48', judgment: 'NO.2', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '3', position: 'Manager')
+Employee.create(emp_id: '33', branch: '福岡', name: '社員32', birth: '1996-06-26', age: '48', judgment: '２号', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '3', position: 'マネージャー')
 
-Employee.create(emp_id: '34', branch: 'Fukuoka', name: 'employee33', birth: '1970-01-01', age: '48', judgment: 'NO.2', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '2', position: 'Manager')
+Employee.create(emp_id: '34', branch: '福岡', name: '社員33', birth: '1970-01-01', age: '48', judgment: '２号', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '2', position: 'マネージャー')
 
-Employee.create(emp_id: '35', branch: 'Fukuoka', name: 'employee34', birth: '1985-08-30', age: '32', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '35', branch: '福岡', name: '社員34', birth: '1985-08-30', age: '32', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '36', branch: 'Fukuoka', name: 'employee35', birth: '1993-04-09', age: '24', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '36', branch: '福岡', name: '社員35', birth: '1993-04-09', age: '24', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '37', branch: 'Fukuoka', name: 'employee36', birth: '1984-12-25', age: '33', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '37', branch: '福岡', name: '社員36', birth: '1984-12-25', age: '33', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '38', branch: 'Fukuoka', name: 'employee37', birth: '1979-11-18', age: '38', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '38', branch: '福岡', name: '社員37', birth: '1979-11-18', age: '38', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '39', branch: 'Fukuoka', name: 'employee38', birth: '1991-10-05', age: '26', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '39', branch: '福岡', name: '社員38', birth: '1991-10-05', age: '26', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '40', branch: 'Fukuoka', name: 'employee39', birth: '1995-08-20', age: '22', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '40', branch: '福岡', name: '社員39', birth: '1995-08-20', age: '22', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '41', branch: 'Fukuoka', name: 'employee40', birth: '1988-03-30', age: '30', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '41',branch: '福岡', name: '社員40', birth: '1988-03-30', age: '30', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '42', branch: 'Fukuoka', name: 'employee41', birth: '1980-02-23', age: '38', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '42', branch: '福岡', name: '社員41', birth: '1980-02-23', age: '38', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '43', branch: 'Fukuoka', name: 'employee42', birth: '1983-09-29', age: '34', judgment: 'Half', task: 'Development', department: 'F-Labo', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '43', branch: '福岡', name: '社員42', birth: '1983-09-29', age: '34', judgment: '折半', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '44', branch: 'Fukuoka', name: 'employee43', birth: '1991-12-18', age: '26', judgment: 'Half', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '44', branch: '福岡', name: '社員43', birth: '1991-12-18', age: '26', judgment: '折半', task: '開発', department: 'F-Labo', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '45', branch: 'Fukuoka', name: 'employee44', birth: '1987-01-24', age: '31', judgment: 'Half', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '1', position: 'Leader')
+Employee.create(emp_id: '45', branch: '福岡', name: '社員44', birth: '1987-01-24', age: '31', judgment: '折半', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '1', position: 'リーダー')
 
-Employee.create(emp_id: '46', branch: 'Fukuoka', name: 'employee45', birth: '1988-09-05', age: '29', judgment: 'Half', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '46', branch: '福岡', name: '社員45', birth: '1988-09-05', age: '29', judgment: '折半', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '47', branch: 'Fukuoka', name: 'employee46', birth: '1974-08-02', age: '43', judgment: 'NO.2', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Leader')
+Employee.create(emp_id: '47', branch: '福岡', name: '社員46', birth: '1974-08-02', age: '43', judgment: '２号', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'リーダー')
 
-Employee.create(emp_id: '48', branch: 'Fukuoka', name: 'employee47', birth: '1990-07-24', age: '27', judgment: 'Half', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Rookie')
+Employee.create(emp_id: '48', branch: '福岡', name: '社員47', birth: '1990-07-24', age: '27', judgment: '折半', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '新人')
 
-Employee.create(emp_id: '49', branch: 'Fukuoka', name: 'employee48', birth: '1985-03-14', age: '33', judgment: 'Half', task: 'Development', department: 'Game Studio', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '49', branch: '福岡', name: '社員48', birth: '1985-03-14', age: '33', judgment: '折半', task: '開発', department: 'Game Studio', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0',  position: '一般社員')
 
-Employee.create(emp_id: '50', branch: 'Fukuoka', name: 'employee49', birth: '1977-02-13', age: '41', judgment: 'NO.2', task: 'Development', department: 'Game Studio', residence: 'Tokyo', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '50', branch: '福岡', name: '社員49', birth: '1977-02-13', age: '41', judgment: '２号', task: '開発', department: 'Game Studio', residence: '東京', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '51', branch: 'Fukuoka', name: 'employee50', birth: '1967-01-18', age: '51', judgment: 'NO.2', task: 'Development', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '1', position: 'Assistant Manager')
+Employee.create(emp_id: '51', branch: '福岡', name: '社員50', birth: '1967-01-18', age: '51', judgment: '２号', task: '開発', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '1', position: 'アシスタントマネージャー')
 
-Employee.create(emp_id: '52', branch: 'Fukuoka', name: 'employee51', birth: '1987-10-03', age: '30', judgment: 'Half', task: 'Development', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '52', branch: '福岡', name: '社員51', birth: '1987-10-03', age: '30', judgment: '折半', task: '開発', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'アシスタントリーダー')
 
-Employee.create(emp_id: '53', branch: 'Fukuoka', name: 'employee52', birth: '1984-03-08', age: '34', judgment: 'Half', task: 'Development', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Second Rookie')
+Employee.create(emp_id: '53', branch: '福岡', name: '社員52', birth: '1984-03-08', age: '34', judgment: '折半', task: '開発', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '第２新人')
 
-Employee.create(emp_id: '54', branch: 'Fukuoka', name: 'employee53', birth: '1975-05-17', age: '42', judgment: 'NO.2', task: 'Management', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Normal Staff')
+Employee.create(emp_id: '54', branch: '福岡', name: '社員53', birth: '1975-05-17', age: '42', judgment: '２号', task: '管理', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: '一般社員')
 
-Employee.create(emp_id: '55', branch: 'Fukuoka', name: 'employee54', birth: '1987-04-29', age: '30', judgment: 'Half', task: 'Development', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '0', fam_except_spouse: '0', position: 'Assistant Leader')
+Employee.create(emp_id: '55', branch: '福岡', name: '社員54', birth: '1987-04-29', age: '30', judgment: '折半', task: '開発', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '0', fam_except_spouse: '0', position: 'assistant leader')
 
-Employee.create(emp_id: '56', branch: 'Fukuoka', name: 'employee55', birth: '1981-10-09', age: '36', judgment: 'Half', task: 'Development', department: 'Teqbase', residence: 'Fukuoka and Kitakyshu', fam_spouse: '1', fam_except_spouse: '1', position: 'Leader')
+Employee.create(emp_id: '56', branch: '福岡', name: '社員55', birth: '1981-10-09', age: '36', judgment: '折半', task: '開発', department: 'Teqbase', residence: '福岡・北九州', fam_spouse: '1', fam_except_spouse: '1', position: 'リーダー')
+
+
+
+
 
 
 
@@ -262,9 +267,12 @@ Point.create(emp_id: '56', age_ad: '2', isms: '0', health: '0', small_group: '0'
 
 
 
+
+
+
 # salary
 
-Salary.create(emp_id: '1', standard_sal: '0', ability_sal: '0', position_sal: '0', task_sal: '0', praise_sal: '0', residence_spt_sal: '0', basic_sal: '1100000', hour_sal: '6737', over_hour_sal: '8422', over_sal: '0', fam_sal: '0', total_sal: '1100000', last_total_sal: '1100000', diff_total_sal: '0', rate: '2.81', last_hour_sal: '6548', diff_hour_sal: '189', last_rate: '0')
+alary.create(emp_id: '1', standard_sal: '0', ability_sal: '0', position_sal: '0', task_sal: '0', praise_sal: '0', residence_spt_sal: '0', basic_sal: '1100000', hour_sal: '6737', over_hour_sal: '8422', over_sal: '0', fam_sal: '0', total_sal: '1100000', last_total_sal: '1100000', diff_total_sal: '0', rate: '2.81', last_hour_sal: '6548', diff_hour_sal: '189', last_rate: '0')
 
 Salary.create(emp_id: '2', standard_sal: '120250', ability_sal: '80000', position_sal: '175000', task_sal: '25000', praise_sal: '0', residence_spt_sal: '0', basic_sal: '440250', hour_sal: '2452', over_hour_sal: '3065', over_sal: '0', fam_sal: '25000', total_sal: '425250', last_total_sal: '420250', diff_total_sal: '5000', rate: '4.04', last_hour_sal: '2353', diff_hour_sal: '99', last_rate: '1.19')
 
@@ -356,7 +364,7 @@ Salary.create(emp_id: '45', standard_sal: '120250', ability_sal: '64000', positi
 
 Salary.create(emp_id: '46', standard_sal: '120250', ability_sal: '43000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '198250', hour_sal: '1215', over_hour_sal: '1519', over_sal: '68355', fam_sal: '0', total_sal: '266605', last_total_sal: '248210', diff_total_sal: '18395', rate: '6.26', last_hour_sal: '1139', diff_hour_sal: '76', last_rate: '7.41')
 
-Salary.create(emp_id: '47', standard_sal: '120250', ability_sal: '86000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '241250', hour_sal: '1478', over_hour_sal: '1848', over_sal: '83160', fam_sal: '0', total_sal: '324410', last_total_sal: '310530', diff_total_sal: '13880', rate: '3.59', last_hour_sal: '1425', diff_hour_sal: '53', last_rate: '4.47')
+Salary.create(emp_id: '47', standard_sal: '120250', ability_sal: '86000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '241250', hour_sal: '1478', over_hour_sal: '1848', over_sal: '83160', fam_sal: '0', total_sal: 324410'', last_total_sal: '310530', diff_total_sal: '13880', rate: '3.59', last_hour_sal: '1425', diff_hour_sal: '53', last_rate: '4.47')
 
 Salary.create(emp_id: '48', standard_sal: '120250', ability_sal: '18000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '173250', hour_sal: '1061', over_hour_sal: '1327', over_sal: '33175', fam_sal: '0', total_sal: '206425', last_total_sal: '205500', diff_total_sal: '925', rate: '2.73', last_hour_sal: '1032', diff_hour_sal: '29', last_rate: '0.45')
 
@@ -383,9 +391,9 @@ Salary.create(emp_id: '56', standard_sal: '120250', ability_sal: '74000', positi
 
 
 
+########### standard values ################
 
 
-##### standard values ####
 
 
 
@@ -394,25 +402,29 @@ Salary.create(emp_id: '56', standard_sal: '120250', ability_sal: '74000', positi
 
 # position standard value
 
-PositionStdVal.create(position_name: 'Head of Total Department', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'220000', pos_std_age:'0')
+PositionStdVal.create(position_name: '統括部長', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'220000', pos_std_age:'0')
 
-PositionStdVal.create(position_name: 'Head of Department', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'200000', pos_std_age:'0')
+PositionStdVal.create(position_name: '部長', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'200000', pos_std_age:'0')
 
-PositionStdVal.create(position_name: 'Deputy Director', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'185000', pos_std_age:'0')
+PositionStdVal.create(position_name: '次長', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'185000', pos_std_age:'0')
 
-PositionStdVal.create(position_name: 'Manager', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'175000', pos_std_age:'0')
+PositionStdVal.create(position_name: 'マネージャー', ability_val: '80000', max_overtime: '0', pos_inc_val:'5000', pos_val:'175000', pos_std_age:'0')
 
-PositionStdVal.create(position_name: 'Assistant Manager', ability_val: '80000', max_overtime: '45', pos_inc_val:'5000', pos_val:'0', pos_std_age:'38')
+PositionStdVal.create(position_name: 'アシスタントマネージャー', ability_val: '80000', max_overtime: '45', pos_inc_val:'5000', pos_val:'0', pos_std_age:'38')
 
-PositionStdVal.create(position_name: 'Leader', ability_val: '70000', max_overtime: '45', pos_inc_val:'10000', pos_val:'0', pos_std_age:'34')
+PositionStdVal.create(position_name: 'リーダー', ability_val: '70000', max_overtime: '45', pos_inc_val:'10000', pos_val:'0', pos_std_age:'34')
 
-PositionStdVal.create(position_name: 'Assistant Leader', ability_val: '45000', max_overtime: '45', pos_inc_val:'5000', pos_val:'0', pos_std_age:'30')
+PositionStdVal.create(position_name: 'アシスタントリーダー', ability_val: '45000', max_overtime: '45', pos_inc_val:'5000', pos_val:'0', pos_std_age:'30')
 
-PositionStdVal.create(position_name: 'Normal Staff', ability_val: '25000', max_overtime: '40', pos_inc_val:'0', pos_val:'0', pos_std_age:'26')
+PositionStdVal.create(position_name: '一般社員', ability_val: '25000', max_overtime: '40', pos_inc_val:'0', pos_val:'0', pos_std_age:'26')
 
-PositionStdVal.create(position_name: 'Second Rookie', ability_val: '15000', max_overtime: '35', pos_inc_val:'0', pos_val:'0', pos_std_age:'22')
+PositionStdVal.create(position_name: '第２新人', ability_val: '15000', max_overtime: '35', pos_inc_val:'0', pos_val:'0', pos_std_age:'22')
 
-PositionStdVal.create(position_name: 'Rookie', ability_val: '0', max_overtime: '25', pos_inc_val:'-2000', pos_val:'0', pos_std_age:'18')
+PositionStdVal.create(position_name: '新人', ability_val: '0', max_overtime: '25', pos_inc_val:'-2000', pos_val:'0', pos_std_age:'18')
+
+
+
+
 
 
 
@@ -422,15 +434,17 @@ PositionStdVal.create(position_name: 'Rookie', ability_val: '0', max_overtime: '
 
 EvaluationStdVal.create(eval_name: 'ISMS', eval_val: '2000')
 
-EvaluationStdVal.create(eval_name: 'health', eval_val: '2000')
+EvaluationStdVal.create(eval_name: '安全衛生委員', eval_val: '2000')
 
-EvaluationStdVal.create(eval_name: 'small_group', eval_val: '2000')
+EvaluationStdVal.create(eval_name: '小集団', eval_val: '2000')
 
-EvaluationStdVal.create(eval_name: 'eval_mgm', eval_val: '2000')
+EvaluationStdVal.create(eval_name: '管理評価', eval_val: '2000')
 
-EvaluationStdVal.create(eval_name: 'eval_tec', eval_val: '2000')
+EvaluationStdVal.create(eval_name: '技術評価', eval_val: '2000')
 
-EvaluationStdVal.create(eval_name: 'adjustment', eval_val: '2000')
+EvaluationStdVal.create(eval_name: '調整', eval_val: '2000')
+
+
 
 
 
@@ -440,13 +454,15 @@ EvaluationStdVal.create(eval_name: 'adjustment', eval_val: '2000')
 
 # task standard value
 
-TaskStdVal.create(task_name: 'Development', task_val: '25000')
+TaskStdVal.create(task_name: '開発', task_val: '25000')
 
-TaskStdVal.create(task_name: 'Management', task_val: '0')
+TaskStdVal.create(task_name: '管理', task_val: '0')
 
-TaskStdVal.create(task_name: 'Sales', task_val: '25000')
+TaskStdVal.create(task_name: '営業', task_val: '25000')
 
-TaskStdVal.create(task_name: 'Human Resources', task_val: '12500')
+TaskStdVal.create(task_name: '人事調達', task_val: '12500')
+
+
 
 
 
@@ -456,9 +472,11 @@ TaskStdVal.create(task_name: 'Human Resources', task_val: '12500')
 
 # residence standard value
 
-ResidenceStdVal.create(residence_name: 'Tokyo', residence_spt_val: '5000')
+ResidenceStdVal.create(residence_name: '東京', residence_spt_val: '5000')
 
-ResidenceStdVal.create(residence_name: 'Fukuoka and Kitakyushu', residence_spt_val: '0')
+ResidenceStdVal.create(residence_name: '福岡・北九州', residence_spt_val: '0')
+
+
 
 
 

@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="title">Home</div>
 
 <div class="search">
@@ -8,9 +7,9 @@
         <h3>Branch : </h3>
         <select name='branch'>
             <option value='ALL' selected>All</option>
+            <option value='Fukuoka'>Fukuoka</option>
             <option value='Kitakyushu'>Kitakyushu</option>
             <option value='Tokyo'>Tokyo</option>
-            <option value='Fukuoka'>Fukuoka</option>
         </select>
 
         <h3>Department : </h3>
@@ -35,110 +34,106 @@
 
         <br>
         <h3><input type="submit" value="Search" style="margin: 50px 0px 0px -30px; padding: 10px 20px; cursor:pointer"></h3>
-    </form>
-</div>
+
 
 <!-- search option -->
 
-<details class="search_option">
-    <summary style="cursor:pointer">Search Option</summary>
-    <div style="text-align:left">
-        <ul class="">
-        <b>Employee</b>
-        <br />
-        <input type="checkbox" name="box1" /> Employee ID
-        <br />
-        <input type="checkbox" name="box1" /> Branch
-        <br />
-        <input type="checkbox" name="box1" /> Name
-        <br />
-        <input type="checkbox" name="box1" /> Birth
-        <br />
-        <input type="checkbox" name="box1" /> Age
-        <br />
-        <input type="checkbox" name="box1" /> Judgment
-        <br />
-        <input type="checkbox" name="box1" /> Task
-        <br />
-        <input type="checkbox" name="box1" /> Department
-        <br />
-        <input type="checkbox" name="box1" /> Residence
-        <br />
-        <input type="checkbox" name="box1" /> Family spouse
-        <br />
-        <input type="checkbox" name="box1" /> Family except spouse
-        <br />
-        <input type="checkbox" name="box1" /> Position
-        <br />
-        </ul>
+        <details class="search_option">
+            <summary style="cursor:pointer; width: 100px; margin: 0px auto 0px auto">Search Option</summary>
+            <div style="text-align:center; width: 700px; margin: 0px auto 0px auto; padding-left: 150px">
+                <ul style="text-align:left">
+                <b>Employee</b>
+                <br />
+                <input type="checkbox" name="option_list[]" value="name" checked="checked"/> Name
+                <br />
+                <input type="checkbox" name="option_list[]" value="age" checked="checked"/> Age
+                <br />
+                <input type="checkbox" name="option_list[]" value="birth"/> Birth
+                <br />
+                <input type="checkbox" name="option_list[]" value="judgment"/> Judgment
+                <br />
+                <input type="checkbox" name="option_list[]" value="residence"/> Residence
+                <br />
+                <input type="checkbox" name="option_list[]" value="fam_spouse"/> Family Spouse
+                <br />
+                <input type="checkbox" name="option_list[]" value="fam_except_spouse"/> Family Except Spouse
+                <br />
+                <input type="checkbox" name="option_list[]" value="branch" checked="checked"/> Branch
+                <br />
+                <input type="checkbox" name="option_list[]" value="department" checked="checked"/> Department
+                <br />
+                <input type="checkbox" name="option_list[]" value="task" checked="checked"/> Task
+                <br />
+                <input type="checkbox" name="option_list[]" value="position" checked="checked"/> Position
+                <br />
+                </ul>
 
-        <ul>
-        <b>Point</b>
-        <br />
-        <input type="checkbox" name="box1" /> Employee ID
-        <br />
-        <input type="checkbox" name="box1" /> Age adjust
-        <br />
-        <input type="checkbox" name="box1" /> ISMS
-        <br />
-        <input type="checkbox" name="box1" /> Healty
-        <br />
-        <input type="checkbox" name="box1" /> Small group
-        <br />
-        <input type="checkbox" name="box1" /> Evaluation management
-        <br />
-        <input type="checkbox" name="box1" /> Evaluation technology
-        <br />
-        <input type="checkbox" name="box1" /> Adjustment
-        <br />
-        <input type="checkbox" name="box1" /> Short work
-        <br />
-        <input type="checkbox" name="box1" /> Over time
-        <br />
-        </ul>
+                <ul style="text-align:left">
+                <b>Point</b>
+                <br />
+                <input type="checkbox" name="ck_age_ad" /> Age Adjust
+                <br />
+                <input type="checkbox" name="ck_isms" /> ISMS
+                <br />
+                <input type="checkbox" name="ck_healty" /> Healty
+                <br />
+                <input type="checkbox" name="ck_small_group" /> Small Group
+                <br />
+                <input type="checkbox" name="ck_eval_mgm" /> Evaluation Management
+                <br />
+                <input type="checkbox" name="ck_eval_tec" /> Evaluation Technology
+                <br />
+                <input type="checkbox" name="ck_adjustment" /> Adjustment
+                <br />
+                <input type="checkbox" name="ck_is_short_work" /> Short Work
+                <br />
+                <input type="checkbox" name="ck_overtime" /> Overtime
+                <br />
+                </ul>
 
-        <ul>
-        <b>Salary</b>
-        <br />
-        <input type="checkbox" name="box1" /> Employee ID
-        <br />
-        <input type="checkbox" name="box1" /> Standard salary
-        <br />
-        <input type="checkbox" name="box1" /> Ability salary
-        <br />
-        <input type="checkbox" name="box1" /> Position salary
-        <br />
-        <input type="checkbox" name="box1" /> Task salary
-        <br />
-        <input type="checkbox" name="box1" /> Praise salary
-        <br />
-        <input type="checkbox" name="box1" /> Residence support salary
-        <br />
-        <input type="checkbox" name="box1" /> Basic salary
-        <br />
-        <input type="checkbox" name="box1" /> Hour salary
-        <br />
-        <input type="checkbox" name="box1" /> Over hour salary
-        <br />
-        <input type="checkbox" name="box1" /> Over salary
-        <br />
-        <input type="checkbox" name="box1" /> Family salary
-        <br />
-        <input type="checkbox" name="box1" /> Total salary
-        <br />
-        <input type="checkbox" name="box1" /> Last total salary
-        <br />
-        <input type="checkbox" name="box1" /> Difference total salary
-        <br />
-        <input type="checkbox" name="box1" /> Rate
-        <br />
-        <input type="checkbox" name="box1" /> Last hour salary
-        <br />
-        <input type="checkbox" name="box1" /> Difference hour salary
-        <br />
-        <input type="checkbox" name="box1" /> Last rate
-        <br />
-        </ul>
-    </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-</details>
+                <ul style="text-align:left">
+                <b>Salary</b>
+                <br />
+                <input type="checkbox" name="ck_standard_sal" /> Standard Salary
+                <br />
+                <input type="checkbox" name="ck_ability_sal" /> Ability Salary
+                <br />
+                <input type="checkbox" name="ck_position_sal" /> Position Salary
+                <br />
+                <input type="checkbox" name="ck_task_sal" /> Task Salary
+                <br />
+                <input type="checkbox" name="ck_praise_sal" /> Praise Salary
+                <br />
+                <input type="checkbox" name="ck_residence_spt_sal" /> Residence Support Salary
+                <br />
+                <input type="checkbox" name="ck_basic_sal" /> Basic Salary
+                <br />
+                <input type="checkbox" name="ck_hour_sal" /> Hour Salary
+                <br />
+                <input type="checkbox" name="ck_over_hour_sal" /> Over Hour Salary
+                <br />
+                <input type="checkbox" name="ck_over_sal" /> Over Salary
+                <br />
+                <input type="checkbox" name="ck_fam_sal" /> Family Salary
+                <br />
+                <input type="checkbox" name="ck_total_sal" /> Total Salary
+                <br />
+                <input type="checkbox" name="ck_last_total_sal" /> Last Total Salary
+                <br />
+                <input type="checkbox" name="ck_diff_total_sal" /> Difference Total Salary
+                <br />
+                <input type="checkbox" name="ck_rate" /> Rate
+                <br />
+                <input type="checkbox" name="ck_last_hour_sal" /> Last Hour Salary
+                <br />
+                <input type="checkbox" name="ck_diff_hour_sal" /> Difference Hour Salary
+                <br />
+                <input type="checkbox" name="ck_last_rate" /> Last Rate
+                <br />
+                </ul>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </details>
+        <br>
+    </form>
+</div>

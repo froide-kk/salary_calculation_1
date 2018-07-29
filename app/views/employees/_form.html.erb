@@ -11,8 +11,9 @@
     </div>
   <% end %>
 
+  <!-- need exists judge -->
   <div class="field">
-    <%= form.label :Employee　ID %>
+    <%= form.label :Employee_ID %>
     <%= form.text_field :emp_id %>
   </div>
 
@@ -32,13 +33,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :judgment %>
-    <%= form.text_field :judgment %>
-  </div>
-
-  <div class="field">
     <%= form.label :branch %>
-    <%= form.select :branch, ["Kitakyushu", "Tokyo", "Fukuoka"]%>
+    <%= form.select :branch, ["Fukuoka", "Tokyo", "Kitakyushu"]%>
   </div>
 
   <div class="field">
@@ -48,12 +44,12 @@
 
   <div class="field">
     <%= form.label :task %>
-    <%= form.select :task, ["Development", "Management", "Human Resource"]%>
+    <%= form.select :task, ["Development", "Management", 'Sales', "Human Resource"]%>
   </div>
 
   <div class="field">
     <%= form.label :residence %>
-    <%= form.select :branch, ["Kitakyushu", "Tokyo", "Fukuoka"]%>
+    <%= form.select :branch, ["Fukuoka and Kitakyshu", "Tokyo"]%>
   </div>
 
   <div class="field">
@@ -68,7 +64,8 @@
 
   <div class="field">
     <%= form.label :position %>
-    <%= form.select :position, ["Manager", "Leader", "Assistant Leader", "Nomarl Staff"]%>
+    <%= form.select :position, ['Head of Total Department', 'Head of Department', 'Deputy Director',
+      "Manager", "Assistant Manager", "Leader", "Assistant Leader", "Nomarl Staff", "Second Rookie", "Rookie"]%>
   </div>
 
   <div class="actions">

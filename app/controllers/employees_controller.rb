@@ -26,6 +26,12 @@ class EmployeesController < ApplicationController
   def create
     @employee = Employee.new(employee_params)
 
+    if @employee.age < 40
+        @employee.judgment = "Half"
+    else
+        @employee.judgment = "NO.2"
+    end
+
     respond_to do |format|
       if @employee.save
         format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
@@ -40,6 +46,13 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+
+    if @employee.age < 40
+        @employee.judgment = "Half"
+    else
+        @employee.judgment = "NO.2"
+    end
+
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
@@ -69,6 +82,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:emp_id, :name, :birth, :age, :judgment, :branch, :department, :task, :residence, :fam_spouse, :fam_except_spouse, :position)
+      params.require(:employee).permit(:emp_id, :name, :birth, :age, :branch, :department, :task, :residence, :fam_spouse, :fam_except_spouse, :position)
     end
 end

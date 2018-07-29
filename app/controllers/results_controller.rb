@@ -11,9 +11,6 @@ before_action :set_result, only: [:show, :edit, :update, :destroy]
 
 # GET /results
 # GET /results.json
-def search
-    @records = Employee.all
-end
 
 def index
     branch = params[:branch]
@@ -21,25 +18,56 @@ def index
     task = params[:task]
     emp_id = params[:emp_id]
 
+    @option_list = params[:option_list]
+
     search_list = [branch, department, task, emp_id]
 
+    # return value difference... only one where value
+    #@results = Employee.connection.select_all("select * from employees right outer join points on employees.emp_id = points.emp_id")
+
+#    sql = "select * from employees right outer join points on employees.emp_id = points.emp_id"
+#    sql_where = " where "
+#    isALL = true
+
+    #@results = Employee.joins("left outer join point on employees.emp_id = points.emp_id").all
     @results = Employee.all
+    #@results = @results.joins(:point).order('employees.emp_id').select('employees.*, points.emp_id as emp_id')
 
     if !(branch == "ALL")
         @results = @results.where("branch = ?", branch)
+#        sql_where << "branch = " + "'" + branch + "', "
+#        isALL = false
     end
 
     if !(department == "ALL")
         @results = @results.where("department = ?", department)
+#        sql_where << "department = " + "'" + department + "', "
+#        isALL = false
     end
 
     if !(task == "ALL")
         @results = @results.where("task = ?", task)
+#        sql_where << "task = " + "'" + task + "', "
+#        isALL = false
     end
 
     if !(emp_id == "ALL")
         @results = @results.where("emp_id = ?", emp_id)
+#        sql_where << "emp_id = " + "'" + emp_id + "', "
+#        isALL = false
     end
+
+#    if isALL
+#        sql_where.clear
+#    else
+#        sql_where = sql_where[0...-2]
+#    end
+#    sql = sql + sql_where
+#    @results = Employee.connection.select_all(sql)
+
+
+
+
 
 #    why??
 
@@ -50,7 +78,7 @@ def index
 #    end
 
 end
-    #search option   joins(:point, :salary).
+    #search option
 
 
 
