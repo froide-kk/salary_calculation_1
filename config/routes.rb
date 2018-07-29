@@ -14,7 +14,10 @@ Rails.application.routes.draw do
 
 root :to => "homes#index"
 
-
-
+get "/position_std_val/new" => "position_std_vals#new"
+get "/evaluation_std_val/new" => "evaluation_std_vals#new"
+get "/task_std_val/new" => "task_std_vals#new"
+get "/residence_std_val/new" => "residence_std_vals#new"
+get "/etc_std_val/new" => "etc_std_vals#new"
 
 end
