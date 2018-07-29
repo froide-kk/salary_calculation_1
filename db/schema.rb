@@ -53,15 +53,15 @@ ActiveRecord::Schema.define(version: 2018_07_27_083824) do
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "emp_id"
-    t.integer "age_ad"
-    t.integer "isms"
-    t.integer "health"
-    t.integer "small_group"
-    t.integer "eval_mgm"
-    t.integer "eval_tec"
-    t.integer "adjustment"
-    t.boolean "is_short_work"
-    t.integer "overtime"
+    t.integer "age_ad", default: 0
+    t.integer "isms", default: 0
+    t.integer "health", default: 0
+    t.integer "small_group", default: 0
+    t.integer "eval_mgm", default: 0
+    t.integer "eval_tec", default: 0
+    t.integer "adjustment", default: 0
+    t.boolean "is_short_work", default: false
+    t.integer "overtime", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

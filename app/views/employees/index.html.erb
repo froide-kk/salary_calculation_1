@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="title">Employees</h1>
+<br>
+<br>
 
 <table>
   <thead>
@@ -45,7 +47,6 @@
 </table>
 
 <br>
+<button class="right" onclick="location.href = '/employees/new'">+ Add Employee</button>
 
-<button><%= link_to 'New Employee', new_employee_path %></button>
-
-<button><%= link_to 'Back', homes_path %></button>
+<button class="center"><%= link_to 'Back', homes_path %></button>

@@ -5,6 +5,9 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
     @employees = Employee.all
+
+    @point = Point.all
+    #@point.column_names
   end
 
   # GET /employees/1
@@ -32,8 +35,23 @@ class EmployeesController < ApplicationController
         @employee.judgment = "NO.2"
     end
 
+    # when create seed ..?
+
+    @point = Point.new
+    column_list = Point.column_names
+
+    @point.emp_id = @employee.emp_id
+    for index in 2...column_list.size
+        if column_list[index] == "is_short_work"
+            @point[column_list[index]] = false
+        else
+            @point[column_list[index]] = 0
+        end
+    end
+
     respond_to do |format|
       if @employee.save
+        @point.save
         format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
         format.json { render :show, status: :created, location: @employee }
       else
@@ -67,7 +85,11 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   # DELETE /employees/1.json
   def destroy
+    @point = Point.find(@employee.id)
     @employee.destroy
+    @point.destroy
+
+
     respond_to do |format|
       format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
       format.json { head :no_content }

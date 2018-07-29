@@ -19,6 +19,14 @@
 	margin: 50px 0px 50px 0px;
 }
 
+caption
+{
+  font-size: 30px;
+  text-align: left;
+  margin: 20px;
+  font-weight: bold;
+}
+
 body
 {
     background-color: #fff;
@@ -59,13 +67,6 @@ a
     }
 }
 
-div
-{
-    &.field, &.actions
-    {
-      margin-bottom: 10px;
-    }
-}
 
 #notice
 {
@@ -249,6 +250,19 @@ button{
   transition:800ms ease all;
   outline:none;
 }
+
+button.right
+{
+    float: right;
+    margin: 0px 30px 50px 0px;
+}
+
+button.center
+{
+    float: none;
+    margin: 20px 47% 100px 47%;
+}
+
 button:hover{
   background:#fff;
   color:rgb(212, 100, 35);
