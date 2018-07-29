@@ -29,9 +29,9 @@ def index
 #    sql_where = " where "
 #    isALL = true
 
-    #@results = Employee.joins("left outer join point on employees.emp_id = points.emp_id").all
+    #@results = Employee.joins("left outer join points on points.employee_id = employees.id")
     @results = Employee.all
-    #@results = @results.joins(:point).order('employees.emp_id').select('employees.*, points.emp_id as emp_id')
+    #@results = @results.joins(:point)  #.order('employees.emp_id').select('employees.*, points.emp_id as emp_id')
 
     if !(branch == "ALL")
         @results = @results.where("branch = ?", branch)

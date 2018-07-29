@@ -27,6 +27,9 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
+
+    #create employee
+
     @employee = Employee.new(employee_params)
 
     if @employee.age < 40
@@ -35,7 +38,7 @@ class EmployeesController < ApplicationController
         @employee.judgment = "NO.2"
     end
 
-    # when create seed ..?
+    #create employee point
 
     @point = Point.new
     column_list = Point.column_names
@@ -49,9 +52,22 @@ class EmployeesController < ApplicationController
         end
     end
 
+    #create employee salary
+
+    @salary = Salary.new
+    column_list = Salary.column_names
+
+    @salary.emp_id = @employee.emp_id
+    for index in 2...column_list.size
+        if column_list[index] == "standard_sal"
+            @salary[column_list[index]] = 1000
+        end
+    end
+
     respond_to do |format|
       if @employee.save
         @point.save
+        @salary.save
         format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
         format.json { render :show, status: :created, location: @employee }
       else
@@ -86,8 +102,10 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1.json
   def destroy
     @point = Point.find(@employee.id)
+    @salary = Salary.find(@employee.id)
     @employee.destroy
     @point.destroy
+    @salary.destroy
 
 
     respond_to do |format|
