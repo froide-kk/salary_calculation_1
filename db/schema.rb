@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_083824) do
+ActiveRecord::Schema.define(version: 2018_07_30_031029) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "emp_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_083824) do
   end
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "employee_id", null: false
     t.string "emp_id"
     t.integer "age_ad", default: 0
     t.integer "isms", default: 0
@@ -90,6 +91,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_083824) do
   end
 
   create_table "salaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "employee_id", null: false
     t.string "emp_id"
     t.integer "standard_sal"
     t.integer "ability_sal"

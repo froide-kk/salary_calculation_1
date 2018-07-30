@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 
 <h1 class="title">Employee Salary</h1>
@@ -33,24 +35,24 @@
     <% @salaries.each do |salary| %>
       <tr>
         <td><%= salary.emp_id %></td>
-        <td><%= salary.standard_sal %></td>
-        <td><%= salary.ability_sal %></td>
-        <td><%= salary.position_sal %></td>
-        <td><%= salary.task_sal %></td>
-        <td><%= salary.praise_sal %></td>
-        <td><%= salary.residence_spt_sal %></td>
-        <td><%= salary.basic_sal %></td>
-        <td><%= salary.hour_sal %></td>
-        <td><%= salary.over_hour_sal %></td>
-        <td><%= salary.over_sal %></td>
-        <td><%= salary.fam_sal %></td>
-        <td><%= salary.total_sal %></td>
-        <td><%= salary.last_total_sal %></td>
-        <td><%= salary.diff_total_sal %></td>
-        <td><%= salary.rate %></td>
-        <td><%= salary.last_hour_sal %></td>
-        <td><%= salary.diff_hour_sal %></td>
-        <td><%= salary.last_rate %></td>
+        <td><%= number_with_precision(salary.standard_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.ability_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.position_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.task_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.praise_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.residence_spt_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.basic_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.hour_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.over_hour_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.over_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.fam_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.total_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.last_total_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.diff_total_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= salary.rate %> %</td>
+        <td><%= number_with_precision(salary.last_hour_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= number_with_precision(salary.diff_hour_sal, :precision => 0, :delimiter => ',') %> &yen;</td>
+        <td><%= salary.last_rate %> %</td>
         <td><%= link_to 'Show', salary %></td>
         <td><%= link_to 'Edit', edit_salary_path(salary) %></td>
       </tr>
@@ -59,5 +61,7 @@
 </table>
 
 <br>
+
+<%= number_with_precision(@number, :precision => 2, :delimiter => ',') %>
 
 <button class="center" onclick="javascript:history.back()">Back</button>

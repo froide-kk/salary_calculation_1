@@ -40,6 +40,8 @@ class PointsController < ApplicationController
   # PATCH/PUT /points/1
   # PATCH/PUT /points/1.json
   def update
+    
+
     respond_to do |format|
       if @point.update(point_params)
         format.html { redirect_to @point, notice: 'Point was successfully updated.' }

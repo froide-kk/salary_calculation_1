@@ -6,13 +6,15 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
 
-    @point = Point.all
+
     #@point.column_names
   end
 
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @salaries = Salary.all
+    @points = Point.all
   end
 
   # GET /employees/new
@@ -27,10 +29,27 @@ class EmployeesController < ApplicationController
   # POST /employees
   # POST /employees.json
   def create
+    @employee = Employee.new(employee_params)
+
+    # load standard values
+
+    @etc_std_val = EtcStdVal.find(1)
+
+    @position_std_val = PositionStdVal.all
+    psv = @position_std_val.where("position_name = ?", @employee.position).first
+
+    @evaluation_std_val = EvaStdVal.all
+    psv = @position_std_val.where("position_name = ?", @employee.position).first
+
+    @task_std_val = TaskStdVal.all
+    tsv = @task_std_val.where("task_name = ?", @employee.task).first
+
+    @residence_std_val = ResidenceStdVal.all
+    rsv = @residence_std_val.where("residence_name = ?", @employee.residence).first
+
+
 
     #create employee
-
-    @employee = Employee.new(employee_params)
 
     if @employee.age < 40
         @employee.judgment = "Half"
@@ -42,11 +61,36 @@ class EmployeesController < ApplicationController
 
     @point = Point.new
     column_list = Point.column_names
-
     @point.emp_id = @employee.emp_id
-    for index in 2...column_list.size
+
+
+
+    for index in 3...column_list.size
         if column_list[index] == "is_short_work"
             @point[column_list[index]] = false
+        elsif column_list[index] == "age_ad"
+            case @employee.position
+            when "Head of Total Department"
+                @point.age_ad = 0
+            when "Head of Department"
+                @point.age_ad = 0
+            when "Deputy Director"
+                @point.age_ad = 0
+            when "Manager"
+                @point.age_ad = 0
+            when "Assistant Manager"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            when "Leader"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            when "Assistant Leader"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            when "Normal Staff"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            when "Second Rookie"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            when "Rookie"
+                @point.age_ad = @employee.age - psv.pos_std_age
+            end
         else
             @point[column_list[index]] = 0
         end
@@ -56,16 +100,65 @@ class EmployeesController < ApplicationController
 
     @salary = Salary.new
     column_list = Salary.column_names
-
     @salary.emp_id = @employee.emp_id
-    for index in 2...column_list.size
-        if column_list[index] == "standard_sal"
-            @salary[column_list[index]] = 1000
+
+    basic = @etc_std_val.std_salary_val + psv.ability_val + psv.pos_val + tsv.task_val + @etc_std_val.praise_val + rsv.residence_spt_val
+    total = basic + (@point.overtime * (basic / @etc_std_val.mon_avg_worktime * 1.25)) + ((@employee.fam_spouse * 10000) + (@employee.fam_except_spouse * 5000))
+    # non auto.... how??
+    last_total = total - 20000
+    last_hour = 1100
+
+
+    for index in 3...column_list.size
+        case column_list[index]
+        when "standard_sal"
+            if @point.is_short_work
+                @salary[column_list[index]] = (0.75 * @etc_std_val.std_salary_val)
+            else
+                @salary[column_list[index]] = @etc_std_val.std_salary_val
+            end
+        when "ability_sal"
+            @salary[column_list[index]] = psv.ability_val
+             + @point.
+        when "position_sal"
+            @salary[column_list[index]] = psv.pos_val
+        when "task_sal"
+            @salary[column_list[index]] = tsv.task_val
+        when "praise_sal"
+            @salary[column_list[index]] = @etc_std_val.praise_val
+        when "residence_spt_sal"
+            @salary[column_list[index]] = rsv.residence_spt_val
+        when "basic_sal"
+            @salary[column_list[index]] = basic
+        when "hour_sal"
+            @salary[column_list[index]] = basic / @etc_std_val.mon_avg_worktime
+        when "over_hour_sal"
+            @salary[column_list[index]] = basic / @etc_std_val.mon_avg_worktime * 1.25
+        when "over_sal"
+            @salary[column_list[index]] = @point.overtime * (basic / @etc_std_val.mon_avg_worktime * 1.25)
+        when "fam_sal"
+            @salary[column_list[index]] = (@employee.fam_spouse * 10000) + (@employee.fam_except_spouse * 5000)
+        when "total_sal"
+            @salary[column_list[index]] = total
+        when "last_total_sal"
+            @salary[column_list[index]] = last_total
+        when "diff_total_sal"
+            @salary[column_list[index]] = total - last_total
+        when "rate"
+            @salary[column_list[index]] = (total - last_total) / last_total
+        when "last_hour_sal"
+            @salary[column_list[index]] = last_hour
+        when "diff_hour_sal"
+            @salary[column_list[index]] = (basic / @etc_std_val.mon_avg_worktime) - last_hour
+        when "last_rate"
+            @salary[column_list[index]] = ((basic / @etc_std_val.mon_avg_worktime) - last_hour) / (basic / @etc_std_val.mon_avg_worktime)
         end
     end
 
     respond_to do |format|
       if @employee.save
+        @point.employee_id = @employee.id
+        @salary.employee_id = @employee.id
         @point.save
         @salary.save
         format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
@@ -80,12 +173,28 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+    # load standard values
+
+    @etc_std_val = EtcStdVal.find(1)
+
+    @position_std_val = PositionStdVal.all
+    psv = @position_std_val.where("position_name = ?", @employee.position).first
+
+    @task_std_val = TaskStdVal.all
+    tsv = @task_std_val.where("task_name = ?", @employee.task).first
+
+    @residence_std_val = ResidenceStdVal.all
+    rsv = @residence_std_val.where("residence_name = ?", @employee.residence).first
+
+    # update employee
 
     if @employee.age < 40
         @employee.judgment = "Half"
     else
         @employee.judgment = "NO.2"
     end
+
+
 
     respond_to do |format|
       if @employee.update(employee_params)
@@ -122,6 +231,6 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:emp_id, :name, :birth, :age, :branch, :department, :task, :residence, :fam_spouse, :fam_except_spouse, :position)
+      params.require(:employee).permit(:id, :emp_id, :name, :birth, :age, :branch, :department, :task, :residence, :fam_spouse, :fam_except_spouse, :position)
     end
 end

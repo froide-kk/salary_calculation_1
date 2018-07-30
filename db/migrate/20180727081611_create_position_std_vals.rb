@@ -7,6 +7,7 @@ class CreatePositionStdVals < ActiveRecord::Migration[5.2]
       t.integer :pos_val
       t.integer :pos_inc_val
       t.integer :pos_std_age
+      t.column :employee_id
 
       t.timestamps
     end

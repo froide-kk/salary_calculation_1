@@ -18,7 +18,9 @@ def index
     task = params[:task]
     emp_id = params[:emp_id]
 
-    @option_list = params[:option_list]
+    @employee_option_list = params[:employee_option_list]
+    @point_option_list = params[:point_option_list]
+    @salary_option_list = params[:salary_option_list]
 
     search_list = [branch, department, task, emp_id]
 
@@ -30,53 +32,26 @@ def index
 #    isALL = true
 
     #@results = Employee.joins("left outer join points on points.employee_id = employees.id")
+    @point = Point.find(1)
     @results = Employee.all
-    #@results = @results.joins(:point)  #.order('employees.emp_id').select('employees.*, points.emp_id as emp_id')
+    @results = @results.joins(:point, :salary)  #.order('employees.emp_id').select('employees.*, points.emp_id as emp_id')
+  #  @results = @results.joins("join points on points.employee_id = employees.id")
 
     if !(branch == "ALL")
         @results = @results.where("branch = ?", branch)
-#        sql_where << "branch = " + "'" + branch + "', "
-#        isALL = false
     end
 
     if !(department == "ALL")
         @results = @results.where("department = ?", department)
-#        sql_where << "department = " + "'" + department + "', "
-#        isALL = false
     end
 
     if !(task == "ALL")
         @results = @results.where("task = ?", task)
-#        sql_where << "task = " + "'" + task + "', "
-#        isALL = false
     end
 
     if !(emp_id == "ALL")
         @results = @results.where("emp_id = ?", emp_id)
-#        sql_where << "emp_id = " + "'" + emp_id + "', "
-#        isALL = false
     end
-
-#    if isALL
-#        sql_where.clear
-#    else
-#        sql_where = sql_where[0...-2]
-#    end
-#    sql = sql + sql_where
-#    @results = Employee.connection.select_all(sql)
-
-
-
-
-
-#    why??
-
-#    for index in 0 ... search_list.size
-#        if !(search_list[index] == "ALL")
-#            @results = @results.where("branch = ?", search_list[index])
-#        end
-#    end
-
 end
     #search option
 

@@ -40,6 +40,7 @@ class SalariesController < ApplicationController
   # PATCH/PUT /salaries/1
   # PATCH/PUT /salaries/1.json
   def update
+
     respond_to do |format|
       if @salary.update(salary_params)
         format.html { redirect_to @salary, notice: 'Salary was successfully updated.' }

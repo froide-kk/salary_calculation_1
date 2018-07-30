@@ -25,12 +25,11 @@
         <% @position_std_vals.each do |position_std_val| %>
           <tr>
             <td><%= position_std_val.position_name %></td>
-            <td><%= position_std_val.ability_val %></td>
+            <td><%= number_with_precision(position_std_val.ability_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= position_std_val.max_overtime %></td>
-            <td><%= position_std_val.pos_val %></td>
-            <td><%= position_std_val.pos_inc_val %></td>
+            <td><%= number_with_precision(position_std_val.pos_val, :precision => 0, :delimiter => ',') %> &yen;</td>
+            <td><%= number_with_precision(position_std_val.pos_inc_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= position_std_val.pos_std_age %></td>
-            <td><%= link_to 'Show', position_std_val %></td>
             <td><%= link_to 'Edit', edit_position_std_val_path(position_std_val) %></td>
             <td><%= link_to 'Destroy', position_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -58,8 +57,7 @@
         <% @evaluation_std_vals.each do |evaluation_std_val| %>
           <tr>
             <td><%= evaluation_std_val.eval_name %></td>
-            <td><%= evaluation_std_val.eval_val %></td>
-            <td><%= link_to 'Show', evaluation_std_val %></td>
+            <td><%= number_with_precision(evaluation_std_val.eval_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= link_to 'Edit', edit_evaluation_std_val_path(evaluation_std_val) %></td>
             <td><%= link_to 'Destroy', evaluation_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -87,8 +85,7 @@
         <% @task_std_vals.each do |task_std_val| %>
           <tr>
             <td><%= task_std_val.task_name %></td>
-            <td><%= task_std_val.task_val %></td>
-            <td><%= link_to 'Show', task_std_val %></td>
+            <td><%= number_with_precision(task_std_val.task_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= link_to 'Edit', edit_task_std_val_path(task_std_val) %></td>
             <td><%= link_to 'Destroy', task_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -116,8 +113,7 @@
         <% @residence_std_vals.each do |residence_std_val| %>
           <tr>
             <td><%= residence_std_val.residence_name %></td>
-            <td><%= residence_std_val.residence_spt_val %></td>
-            <td><%= link_to 'Show', residence_std_val %></td>
+            <td><%= number_with_precision(residence_std_val.residence_spt_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= link_to 'Edit', edit_residence_std_val_path(residence_std_val) %></td>
             <td><%= link_to 'Destroy', residence_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -147,12 +143,11 @@
       <tbody>
         <% @etc_std_vals.each do |etc_std_val| %>
           <tr>
-            <td><%= etc_std_val.praise_val %></td>
+            <td><%= number_with_precision(etc_std_val.praise_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= etc_std_val.mon_avg_worktime %></td>
             <td><%= etc_std_val.mon_short_worktime %></td>
-            <td><%= etc_std_val.holiday_val %></td>
-            <td><%= etc_std_val.std_salary_val %></td>
-            <td><%= link_to 'Show', etc_std_val %></td>
+            <td><%= etc_std_val.holiday_val %> Days</td>
+            <td><%= number_with_precision(etc_std_val.std_salary_val, :precision => 0, :delimiter => ',') %> &yen;</td>
             <td><%= link_to 'Edit', edit_etc_std_val_path(etc_std_val) %></td>
             <td><%= link_to 'Destroy', etc_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
@@ -167,4 +162,5 @@
 
 <br>
 <br>
+<%= number_with_precision(@number, :precision => 2, :delimiter => ',') %>
 <button class="center" onclick="javascript:history.back()">Back</button>
