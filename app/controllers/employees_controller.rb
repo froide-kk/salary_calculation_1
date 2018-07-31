@@ -38,8 +38,7 @@ class EmployeesController < ApplicationController
     @position_std_val = PositionStdVal.all
     psv = @position_std_val.where("position_name = ?", @employee.position).first
 
-    @evaluation_std_val = EvaStdVal.all
-    psv = @position_std_val.where("position_name = ?", @employee.position).first
+
 
     @task_std_val = TaskStdVal.all
     tsv = @task_std_val.where("task_name = ?", @employee.task).first
@@ -108,6 +107,7 @@ class EmployeesController < ApplicationController
     last_total = total - 20000
     last_hour = 1100
 
+    @evaluation_std_vals = EvaluationStdVal.all
 
     for index in 3...column_list.size
         case column_list[index]
@@ -118,8 +118,20 @@ class EmployeesController < ApplicationController
                 @salary[column_list[index]] = @etc_std_val.std_salary_val
             end
         when "ability_sal"
-            @salary[column_list[index]] = psv.ability_val
-             + @point.
+            point_sal = 0
+            #eval_list.each do |e|
+                #point_sal =  point_sal + (@point[e] * @evaluation_std_val.where("eval_name = ?", e).first)
+            #end
+            # need array...
+
+            point_sal = point_sal + @point["isms"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "isms").first.eval_val
+            point_sal = point_sal + @point["health"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "health").first.eval_val
+            point_sal = point_sal + @point["small_group"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "small_group").first.eval_val
+            point_sal = point_sal + @point["eval_mgm"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_mgm").first.eval_val
+            point_sal = point_sal + @point["eval_tec"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_tec").first.eval_val
+            point_sal = point_sal + @point["adjustment"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "adjustment").first.eval_val
+
+            @salary[column_list[index]] = psv.ability_val + point_sal
         when "position_sal"
             @salary[column_list[index]] = psv.pos_val
         when "task_sal"
@@ -161,7 +173,7 @@ class EmployeesController < ApplicationController
         @salary.employee_id = @employee.id
         @point.save
         @salary.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
+        format.html { redirect_to "/employees", notice: 'Employee was successfully created.' }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new }

@@ -432,6 +432,8 @@ EvaluationStdVal.create(eval_name: 'eval_tec', eval_val: '2000')
 
 EvaluationStdVal.create(eval_name: 'adjustment', eval_val: '2000')
 
+EvaluationStdVal.create(eval_name: 'age_ad', eval_val: '2000')
+
 
 
 

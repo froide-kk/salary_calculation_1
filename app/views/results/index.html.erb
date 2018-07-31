@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<script>
+function check()
+{
+    cbox = input_form.chk;
+    if(cbox.length)
+    {  // 여러 개일 경우
+        for(var i = 0; i<cbox.length;i++)
+        {
+            cbox[i].checked = input_form.all.checked;
+        }
+    }
+    else
+    { // 한 개일 경우
+        cbox.checked = input_form.all.checked;
+    }
+}
+</script>
+
 <div class="title">Home</div>
 
 
@@ -45,6 +63,7 @@
             <div style="text-align:center; width: 700px; margin: 0px auto 0px auto; padding-left: 100px">
                 <ul style="text-align:left">
                 <b>Employee</b>
+                <input type="checkbox" name="all" onclick="check();"/>check all
                 <br />
                 <input type="checkbox" name="employee_option_list[]" value="name" checked="checked"/> Name
                 <br />
