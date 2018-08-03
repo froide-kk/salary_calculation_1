@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>職位:</strong>
+  <%= @position_std_val.position_name %>
+</p>
+
+<p>
+  <strong>職能給:</strong>
+  <%= @position_std_val.ability_val %>
+</p>
+
+<p>
+  <strong>最大残業時間:</strong>
+  <%= @position_std_val.max_overtime %>
+</p>
+
+<p>
+  <strong>役職手当:</strong>
+  <%= @position_std_val.pos_val %>
+</p>
+
+<p>
+  <strong>職位増額分:</strong>
+  <%= @position_std_val.pos_inc_val %>
+</p>
+
+<p>
+  <strong>職位基準年齢:</strong>
+  <%= @position_std_val.pos_std_age %>
+</p>
+
+<%= link_to '修正', edit_position_std_val_path(@position_std_val) %> |
+<%= link_to '移転', position_std_vals_path %>

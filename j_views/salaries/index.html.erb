@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title">給与項目</h1>       <!--Employee salary-->
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>番号</th>            <!--Emp-->
+      <th>基準給与</th>            <!--Standard sal-->
+      <th>職能給 (基準)</th>            <!--Ability sal-->
+      <th>役職手当</th>            <!--Position sal-->
+      <th>職務手当</th>            <!--Task sal-->
+      <th>精勤手当</th>            <!--Praise sal-->
+      <th>首都圏手当</th>            <!--Residence spt sal-->
+      <th>基本給</th>            <!--Basic sal-->
+      <th>時間単価</th>            <!--Hour sal-->
+      <th>残業単価</th>            <!--Over hour sal-->
+      <th>定額残業代</th>            <!--Over sal-->
+      <th>家族手当</th>            <!--Fam sal-->
+      <th>額面給与</th>            <!--Total sal-->
+      <th>2018下期給与</th>            <!--Last total sal-->
+      <th>差額</th>            <!--Diff total sal-->
+      <th>昇給率</th>            <!--Rate-->
+      <th>昨年時給</th>            <!--Last hour sal-->
+      <th>時給差額</th>            <!--Diff hour sal-->
+      <th>昨昇給率</th>            <!--Last rate-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salaries.each do |salary| %>
+      <tr>
+        <td><%= salary.emp_id %></td>
+        <td><%= salary.standard_sal %></td>
+        <td><%= salary.ability_sal %></td>
+        <td><%= salary.position_sal %></td>
+        <td><%= salary.task_sal %></td>
+        <td><%= salary.praise_sal %></td>
+        <td><%= salary.residence_spt_sal %></td>
+        <td><%= salary.basic_sal %></td>
+        <td><%= salary.hour_sal %></td>
+        <td><%= salary.over_hour_sal %></td>
+        <td><%= salary.over_sal %></td>
+        <td><%= salary.fam_sal %></td>
+        <td><%= salary.total_sal %></td>
+        <td><%= salary.last_total_sal %></td>
+        <td><%= salary.diff_total_sal %></td>
+        <td><%= salary.rate %></td>
+        <td><%= salary.last_hour_sal %></td>
+        <td><%= salary.diff_hour_sal %></td>
+        <td><%= salary.last_rate %></td>
+        <td><%= link_to '詳しく', salary %></td>
+        <td><%= link_to '修正', edit_salary_path(salary) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button class="center" onclick="javascript:history.back()">移転</button>

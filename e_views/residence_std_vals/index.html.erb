@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Residence Std Vals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Residence name</th>
+      <th>Residence spt val</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @residence_std_vals.each do |residence_std_val| %>
+      <tr>
+        <td><%= residence_std_val.residence_name %></td>
+        <td><%= residence_std_val.residence_spt_val %></td>
+        <td><%= link_to 'Show', residence_std_val %></td>
+        <td><%= link_to 'Edit', edit_residence_std_val_path(residence_std_val) %></td>
+        <td><%= link_to 'Destroy', residence_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Residence Std Val', new_residence_std_val_path %>

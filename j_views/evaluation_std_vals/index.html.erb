@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>評価</h1>    <!--Evaluation Std Vals-->
+
+<table>
+  <thead>
+    <tr>
+      <th>評価項目の名前</th>    <!--Eval name-->
+      <th>評価項目の金額</th>    <!--Eval val-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @evaluation_std_vals.each do |evaluation_std_val| %>
+      <tr>
+        <td><%= evaluation_std_val.eval_name %></td>
+        <td><%= evaluation_std_val.eval_val %></td>
+        <td><%= link_to '詳しく', evaluation_std_val %></td>      <!--Show-->
+        <td><%= link_to '修正', edit_evaluation_std_val_path(evaluation_std_val) %></td>    <!--Edit-->
+        <td><%= link_to '削除', evaluation_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>     <!--Destroy-->  
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '評価項目追加', new_evaluation_std_val_path %>    <!--Add New Evaluation Std Val-->

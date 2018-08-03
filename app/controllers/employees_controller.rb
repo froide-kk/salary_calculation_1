@@ -38,8 +38,6 @@ class EmployeesController < ApplicationController
     @position_std_val = PositionStdVal.all
     psv = @position_std_val.where("position_name = ?", @employee.position).first
 
-
-
     @task_std_val = TaskStdVal.all
     tsv = @task_std_val.where("task_name = ?", @employee.task).first
 
@@ -130,7 +128,6 @@ class EmployeesController < ApplicationController
             point_sal = point_sal + @point["eval_mgm"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_mgm").first.eval_val
             point_sal = point_sal + @point["eval_tec"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_tec").first.eval_val
             point_sal = point_sal + @point["adjustment"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "adjustment").first.eval_val
-
             @salary[column_list[index]] = psv.ability_val + point_sal
         when "position_sal"
             @salary[column_list[index]] = psv.pos_val
@@ -140,6 +137,12 @@ class EmployeesController < ApplicationController
             @salary[column_list[index]] = @etc_std_val.praise_val
         when "residence_spt_sal"
             @salary[column_list[index]] = rsv.residence_spt_val
+        when "capital_sal"
+            if @employee["residence"] == "Tokyo"
+                @salary[column_list[index]] = @etc_std_val.capital_val
+            else
+                @salary[column_list[index]] = 0
+            end
         when "basic_sal"
             @salary[column_list[index]] = basic
         when "hour_sal"
@@ -205,7 +208,6 @@ class EmployeesController < ApplicationController
     else
         @employee.judgment = "NO.2"
     end
-
 
 
     respond_to do |format|

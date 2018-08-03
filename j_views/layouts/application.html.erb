@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <!-- Menu Bar -->
+
+    <nav id="topMenu">
+        <ul>
+            <li class="topMenuLi">
+                <a class="menuLink" href="/">給与照会&変更</a>
+            </li>
+
+            <li>|</li>
+
+            <li class="topMenuLi">
+                <a class="menuLink" href="/employees">職員の情報</a>  <!--직원 정보의 변경-->
+            </li>
+
+            <li>|</li>
+
+            <li class="topMenuLi">
+                <a class="menuLink" href="">修正</a> <!--수정하기--> 
+                <ul class="submenu">
+                    <li>
+                        <a class="submenuLink" href="/points">職員評価項目</a>
+                    </li>
+                    <li>
+                        <a class="submenuLink" href="/salaries">給与項目</a>
+                    </li>
+                    <li>
+                        <a class="submenuLink" href="/standards">基準項目</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

@@ -206,11 +206,10 @@ function check()
             <% if !(@salary_option_list == nil) %>
                 <% @salary_option_list.each do |column| %>
                     <td>
-                        <%= result.salary[column] %>
                         <% if column == "rate" || column == "last_rate" %>
-                            %
+                            <%= result.salary[column] %> %
                         <% else %>
-                            &yen;
+                            <%= number_with_precision(result.salary[column], :precision => 0, :delimiter => ',') %> &yen;
                         <% end %>
                     </td>
                 <% end %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>その他の事項</h1>    <!--Etc Std Vals-->
+
+<table>
+  <thead>
+    <tr>
+      <th>精勤手当</th>     <!--Praise val-->
+      <th>月平均労働時間</th>     <!--Mon avg worktime-->
+      <th>時短の場合</th>     <!--Mon short worktime-->
+      <th>年間休日</th>     <!--Holiday val-->
+      <th>基準給与</th>     <!--Std salary val-->
+      <th colspan="3"></th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @etc_std_vals.each do |etc_std_val| %>
+      <tr>
+        <td><%= etc_std_val.praise_val %></td>
+        <td><%= etc_std_val.mon_avg_worktime %></td>
+        <td><%= etc_std_val.mon_short_worktime %></td>
+        <td><%= etc_std_val.holiday_val %></td>
+        <td><%= etc_std_val.std_salary_val %></td>
+        <td><%= link_to '詳しく', etc_std_val %></td>
+        <td><%= link_to '修正', edit_etc_std_val_path(etc_std_val) %></td>
+        <td><%= link_to '削除', etc_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'その他の項目追加', new_etc_std_val_path %>  <!--New Etc Std Val-->

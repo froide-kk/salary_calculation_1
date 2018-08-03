@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>精勤手当:</strong>
+  <%= @etc_std_val.praise_val %>
+</p>
+
+<p>
+  <strong>月平均労働時間:</strong>
+  <%= @etc_std_val.mon_avg_worktime %>
+</p>
+
+<p>
+  <strong>時短の場合:</strong>
+  <%= @etc_std_val.mon_short_worktime %>
+</p>
+
+<p>
+  <strong>年間休日:</strong>
+  <%= @etc_std_val.holiday_val %>
+</p>
+
+<p>
+  <strong>基準給与:</strong>
+  <%= @etc_std_val.std_salary_val %>
+</p>
+
+<%= link_to '修正', edit_etc_std_val_path(@etc_std_val) %> |
+<%= link_to '移転', etc_std_vals_path %>

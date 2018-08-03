@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_031029) do
+ActiveRecord::Schema.define(version: 2018_08_03_022313) do
 
   create_table "employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "emp_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_031029) do
     t.integer "std_salary_val"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "capital_val"
   end
 
   create_table "evaluation_std_vals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -52,7 +53,6 @@ ActiveRecord::Schema.define(version: 2018_07_30_031029) do
   end
 
   create_table "points", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "employee_id", null: false
     t.string "emp_id"
     t.integer "age_ad", default: 0
     t.integer "isms", default: 0
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_031029) do
     t.integer "overtime", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "employee_id", null: false
   end
 
   create_table "position_std_vals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 2018_07_30_031029) do
     t.float "last_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "capital_sal"
   end
 
   create_table "standards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -1,0 +1,27 @@
+<%= form_with(model: task_std_val, local: true) do |form| %>
+  <% if task_std_val.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task_std_val.errors.count, "error") %> prohibited this task_std_val from being saved:</h2>
+
+      <ul>
+      <% task_std_val.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :職種 %>
+    <%= form.text_field :task_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :職務手当 %>
+    <%= form.number_field :task_val %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

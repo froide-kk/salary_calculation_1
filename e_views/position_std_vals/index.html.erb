@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Position Std Vals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Position name</th>
+      <th>Ability val</th>
+      <th>Max overtime</th>
+      <th>Pos val</th>
+      <th>Pos inc val</th>
+      <th>Pos std age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @position_std_vals.each do |position_std_val| %>
+      <tr>
+        <td><%= position_std_val.position_name %></td>
+        <td><%= position_std_val.ability_val %></td>
+        <td><%= position_std_val.max_overtime %></td>
+        <td><%= position_std_val.pos_val %></td>
+        <td><%= position_std_val.pos_inc_val %></td>
+        <td><%= position_std_val.pos_std_age %></td>
+        <td><%= link_to 'Show', position_std_val %></td>
+        <td><%= link_to 'Edit', edit_position_std_val_path(position_std_val) %></td>
+        <td><%= link_to 'Destroy', position_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Position Std Val', new_position_std_val_path %>

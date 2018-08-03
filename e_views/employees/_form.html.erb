@@ -1,0 +1,74 @@
+<%= form_with(model: employee, local: true) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- need exists judge -->
+  <div class="field">
+    <%= form.label :Employee_ID %>
+    <%= form.text_field :emp_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birth %>
+    <%= form.date_select :birth, :start_year=>1950, :end_year=>2018 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, :min=>1, :max=>100 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :branch %>
+    <%= form.select :branch, ["Fukuoka", "Tokyo", "Kitakyushu"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.select :department, ["F-Labo", "Growth Hack Ata", "Game Studio", "Teqbase"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :task %>
+    <%= form.select :task, ["Development", "Management", 'Sales', "Human Resource"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :residence %>
+    <%= form.select :residence, ["Fukuoka and Kitakyushu", "Tokyo"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :fam_spouse %>
+    <%= form.number_field :fam_spouse, :min=>0, :max=>1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fam_except_spouse %>
+    <%= form.number_field :fam_except_spouse, :min=>0, :max=>9 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.select :position, ['Head of Total Department', 'Head of Department', 'Deputy Director',
+      "Manager", "Assistant Manager", "Leader", "Assistant Leader", "Normal Staff", "Second Rookie", "Rookie"]%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

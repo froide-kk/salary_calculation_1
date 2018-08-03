@@ -1,0 +1,27 @@
+<%= form_with(model: residence_std_val, local: true) do |form| %>
+  <% if residence_std_val.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(residence_std_val.errors.count, "error") %> prohibited this residence_std_val from being saved:</h2>
+
+      <ul>
+      <% residence_std_val.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :住居地 %>
+    <%= form.text_field :residence_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :補助金 %>
+    <%= form.number_field :residence_spt_val %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

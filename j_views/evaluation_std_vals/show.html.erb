@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>評価項目の名前:</strong>
+  <%= @evaluation_std_val.eval_name %>
+</p>
+
+<p>
+  <strong>評価項目の金額:</strong>
+  <%= @evaluation_std_val.eval_val %>
+</p>
+
+<%= link_to '修正', edit_evaluation_std_val_path(@evaluation_std_val) %> |
+<%= link_to '移転', evaluation_std_vals_path %>

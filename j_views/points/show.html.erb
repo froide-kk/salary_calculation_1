@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>番号:</strong>
+  <%= @point.emp_id %>
+</p>
+
+<p>
+  <strong>年齢調整:</strong>
+  <%= @point.age_ad %>
+</p>
+
+<p>
+  <strong>ISMS:</strong>
+  <%= @point.isms %>
+</p>
+
+<p>
+  <strong>安全衛生委員:</strong>
+  <%= @point.health %>
+</p>
+
+<p>
+  <strong>小集団:</strong>
+  <%= @point.small_group %>
+</p>
+
+<p>
+  <strong>経営評価:</strong>
+  <%= @point.eval_mgm %>
+</p>
+
+<p>
+  <strong>技術評価:</strong>
+  <%= @point.eval_tec %>
+</p>
+
+<p>
+  <strong>調整:</strong>
+  <%= @point.adjustment %>
+</p>
+
+<p>
+  <strong>時短勤務:</strong>
+  <%= @point.is_short_work %>
+</p>
+
+<p>
+  <strong>定額残業時間:</strong>
+  <%= @point.overtime %>
+</p>
+
+<%= link_to '修正', edit_point_path(@point) %> |
+<%= link_to '移転', points_path %>

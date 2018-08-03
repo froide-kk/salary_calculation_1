@@ -1,0 +1,174 @@
+<p id="notice"><%= notice %></p>
+
+<div class="title">給与照会&変更</div>
+
+<div class="search">
+    <form method="get" action="/results">
+        <h3>支社 : </h3>
+        <select name='branch'>
+            <option value='ALL' selected>ALL</option>
+            <option value='Fukuoka'>福岡</option>
+            <option value='Kitakyushu'>北九州</option>
+            <option value='Tokyo'>東京</option>
+        </select>
+
+        <h3>部署 : </h3>
+        <select name='department'>
+            <option value='ALL' selected>ALL</option>
+            <option value='F-Labo'>F-Labo</option>
+            <option value='Growth Hack Ata'>Growth Hack Ata</option>
+            <option value='Game Studio'>Game Studio</option>
+            <option value='Teqbase'>Teqbase</option>
+        </select>
+
+        <h3>職種 : </h3>
+        <select name='task'>
+            <option value='ALL' selected>ALL</option>
+            <option value='Development'>開発</option>
+            <option value='Management'>管理</option>
+            <option value='Human Resource'>人事調達</option>
+        </select>
+
+        <h3>番号 : </h3>
+        <input type="text" name="emp_id" value="ALL">
+
+        <br>
+        <h3><input type="submit" value="検索" style="margin: 50px 0px 0px -30px; padding: 10px 20px; cursor:pointer"></h3>
+
+
+<!-- search option -->
+
+        <details class="search_option">
+            <summary style="cursor:pointer; width: 100px; margin: 0px auto 0px auto">検索オプション</summary>
+            <div style="text-align:center; width: 700px; margin: 0px auto 0px auto; padding-left: 100px">
+                <ul style="text-align:left">
+                <b>職員の情報</b>
+                <br />
+                <input type="checkbox" name="option_list[]" value="name" checked="checked"/> 氏名
+                <br />
+                <input type="checkbox" name="option_list[]" value="age" checked="checked"/> 年齢
+                <br />
+                <input type="checkbox" name="option_list[]" value="birth"/> 生年月日
+                <br />
+                <input type="checkbox" name="option_list[]" value="judgment"/> 判定
+                <br />
+                <input type="checkbox" name="option_list[]" value="residence"/> 住居
+                <br />
+                <input type="checkbox" name="option_list[]" value="fam_spouse"/> 扶養家族数(配偶者)
+                <br />
+                <input type="checkbox" name="option_list[]" value="fam_except_spouse"/> 扶養家族数(子：18迄）
+                <br />
+                <input type="checkbox" name="option_list[]" value="branch" checked="checked"/> 支社
+                <br />
+                <input type="checkbox" name="option_list[]" value="department" checked="checked"/> 部署
+                <br />
+                <input type="checkbox" name="option_list[]" value="task" checked="checked"/> 職種
+                <br />
+                <input type="checkbox" name="option_list[]" value="position" checked="checked"/> 職位
+                <br />
+                </ul>
+
+                <ul style="text-align:left">
+                <b>職員評価</b>
+                <br />
+                <input type="checkbox" name="ck_age_ad" /> 年齢調整
+                <br />
+                <input type="checkbox" name="ck_isms" /> ISMS
+                <br />
+                <input type="checkbox" name="ck_healty" /> 安全衛生委員
+                <br />
+                <input type="checkbox" name="ck_small_group" /> 小集団
+                <br />
+                <input type="checkbox" name="ck_eval_mgm" /> 経営評価
+                <br />
+                <input type="checkbox" name="ck_eval_tec" /> 技術評価
+                <br />
+                <input type="checkbox" name="ck_adjustment" /> 調整
+                <br />
+                <input type="checkbox" name="ck_is_short_work" /> 時短勤務
+                <br />
+                <input type="checkbox" name="ck_overtime" /> 定額残業時間
+                <br />
+                </ul>
+
+                <ul style="text-align:left">
+                <b>給与情報<</b>
+                <br />
+                <input type="checkbox" name="ck_standard_sal" /> 基準給与
+                <br />
+                <input type="checkbox" name="ck_ability_sal" /> 職能給（基準）
+                <br />
+                <input type="checkbox" name="ck_position_sal" /> 役職手当
+                <br />
+                <input type="checkbox" name="ck_task_sal" /> 職務手当
+                <br />
+                <input type="checkbox" name="ck_praise_sal" /> 精勤手当
+                <br />
+                <input type="checkbox" name="ck_residence_spt_sal" /> 首都圏手当
+                <br />
+                <input type="checkbox" name="ck_basic_sal" /> 基本給
+                <br />
+                <input type="checkbox" name="ck_hour_sal" /> 時間単価
+                <br />
+                <input type="checkbox" name="ck_over_hour_sal" /> 残業単価
+                <br />
+                <input type="checkbox" name="ck_over_sal" /> 定額残業代
+                <br />
+                <input type="checkbox" name="ck_fam_sal" /> 家族手当
+                <br />
+                <input type="checkbox" name="ck_total_sal" /> 額面給与
+                <br />
+                <input type="checkbox" name="ck_last_total_sal" /> 2018下期給与
+                <br />
+                <input type="checkbox" name="ck_diff_total_sal" /> 差額
+                <br />
+                <input type="checkbox" name="ck_rate" /> 昇給率
+                <br />
+                <input type="checkbox" name="ck_last_hour_sal" /> 昨年時給
+                <br />
+                <input type="checkbox" name="ck_diff_hour_sal" /> 時給差額
+                <br />
+                <input type="checkbox" name="ck_last_rate" /> 昨昇給率
+                <br />
+                </ul>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </details>
+        <br>
+    </form>
+</div>
+
+
+<!-- Search, Results
+
+<%= @results.columns %> -->
+
+<% if !(@results.exists?) %>
+    <h1 style="text-align: center">No Matching Data<h1>
+<% else %>
+
+<table class="result" align="center">
+    <thead>
+        <tr>
+            <th>番号</th>
+            <% if !(@option_list == nil) %>
+                <% @option_list.each do |column| %>
+                    <th><%= column.upcase %></th>
+                <% end %>
+            <% end %>
+        </tr>
+    </thead>
+    <% @results.each do |result| %>
+    <tbody>
+        <tr>
+            <td><%= result['emp_id'] %></td>
+            <% if !(@option_list == nil) %>
+                <% @option_list.each do |column| %>
+                    <td><%= result[column] %></td>
+                <% end %>
+            <% end %>
+        </tr>
+    </tbody>
+    <% end %>
+</table>
+<% end %>

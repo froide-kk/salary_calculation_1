@@ -1,0 +1,170 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="title">基準項目</h1>          <!--Standards-->
+
+
+
+<br>
+
+<div>
+    <table>
+      <caption>職位にともなう基準</caption>    <!--Position Standard Value-->
+      <thead>
+        <tr>
+          <th>職位</th>          <!--Position name-->
+          <th>職能給</th>          <!--Ability val-->
+          <th>最大残業時間</th>          <!--Max overtime-->
+          <th>役職手当</th>          <!--Pos val-->
+          <th>職位増額分</th>          <!--Pos inc val-->
+          <th>職位基準年齢</th>          <!--Pos std age-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @position_std_vals.each do |position_std_val| %>
+          <tr>
+            <td><%= position_std_val.position_name %></td>
+            <td><%= position_std_val.ability_val %></td>
+            <td><%= position_std_val.max_overtime %></td>
+            <td><%= position_std_val.pos_val %></td>
+            <td><%= position_std_val.pos_inc_val %></td>
+            <td><%= position_std_val.pos_std_age %></td>
+            <td><%= link_to '詳しく', position_std_val %></td>
+            <td><%= link_to '修正', edit_position_std_val_path(position_std_val) %></td>
+            <td><%= link_to '削除', position_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="right" onclick="location.href = '/position_std_val/new'">+ 職位追加</button>
+    <br>
+</div>
+
+<div>
+    <table>
+      <caption>評価</caption>    <!--Evaluation Standard Value-->
+      <thead>
+        <tr>
+          <th>評価項目の名前</th>    <!--Eval name-->
+          <th>評価項目の金額</th>    <!--Eval val-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @evaluation_std_vals.each do |evaluation_std_val| %>
+          <tr>
+            <td><%= evaluation_std_val.eval_name %></td>
+            <td><%= evaluation_std_val.eval_val %></td>
+            <td><%= link_to '詳しく', evaluation_std_val %></td>
+            <td><%= link_to '修正', edit_evaluation_std_val_path(evaluation_std_val) %></td>
+            <td><%= link_to '削除', evaluation_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="right" onclick="location.href = '/evaluation_std_val/new'">+ 評価項目追加</button>
+    <br>
+</div>
+
+<div>
+    <table>
+      <caption>職種による基準</caption>          <!--Task Standard Value-->
+      <thead>
+        <tr>
+          <th>職種</th>          <!--Task name-->
+          <th>職務手当</th>          <!--Task val-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @task_std_vals.each do |task_std_val| %>
+          <tr>
+            <td><%= task_std_val.task_name %></td>
+            <td><%= task_std_val.task_val %></td>
+            <td><%= link_to '詳しく', task_std_val %></td>
+            <td><%= link_to '修正', edit_task_std_val_path(task_std_val) %></td>
+            <td><%= link_to '削除', task_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="right" onclick="location.href = '/task_std_val/new'">+ 職種追加</button>
+    <br>
+</div>
+
+<div>
+    <table>
+      <caption>住居による基準</caption>            <!--Residence Standard Value-->
+      <thead>
+        <tr>
+          <th>住居地</th>          <!--Residence name-->
+          <th>補助金</th>          <!--Residence spt val-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @residence_std_vals.each do |residence_std_val| %>
+          <tr>
+            <td><%= residence_std_val.residence_name %></td>
+            <td><%= residence_std_val.residence_spt_val %></td>
+            <td><%= link_to '詳しく', residence_std_val %></td>
+            <td><%= link_to '修正', edit_residence_std_val_path(residence_std_val) %></td>
+            <td><%= link_to '削除', residence_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="right" onclick="location.href = '/residence_std_val/new'">+ 住居地追加</button>
+    <br>
+</div>
+
+<div>
+    <table>
+      <caption>その他の事項</caption>   <!--ETC Standard Value-->
+      <thead>
+        <tr>
+          <th>精勤手当</th>     <!--Praise val-->
+          <th>月平均労働時間</th>     <!--Mon avg worktime-->
+          <th>時短の場合</th>     <!--Mon short worktime-->
+          <th>年間休日</th>     <!--Holiday val-->
+          <th>基準給与</th>     <!--Std salary val-->
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @etc_std_vals.each do |etc_std_val| %>
+          <tr>
+            <td><%= etc_std_val.praise_val %></td>
+            <td><%= etc_std_val.mon_avg_worktime %></td>
+            <td><%= etc_std_val.mon_short_worktime %></td>
+            <td><%= etc_std_val.holiday_val %></td>
+            <td><%= etc_std_val.std_salary_val %></td>
+            <td><%= link_to '詳しく', etc_std_val %></td>
+            <td><%= link_to '修正', edit_etc_std_val_path(etc_std_val) %></td>
+            <td><%= link_to '削除', etc_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <button class="right" onclick="location.href = '/etc_std_val/new'">+ その他の項目追加</button>
+    <br>
+</div>
+
+<br>
+<br>
+<button class="center" onclick="javascript:history.back()">移転</button>

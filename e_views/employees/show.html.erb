@@ -1,0 +1,263 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("#btnPrint").live("click", function () {
+            var divContents = $("#dvContainer").html();
+            var printWindow = window.open('', '', 'height=800,width=1200');
+            printWindow.document.write('<html><head><title></title>');
+            printWindow.document.write('</head><body >');
+            printWindow.document.write(divContents);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        });
+    </script>
+</head>
+<body>
+
+    <form id="form1">
+    <div id="dvContainer">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:0px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:0px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-3rah{font-size:36px;border-color:inherit}
+.tg .tg-y7gf{font-size:28px;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-us36{border-color:inherit;vertical-align:top}
+.tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
+.tg .tg-7btt{font-weight:bold;border-color:inherit;text-align:center;vertical-align:top}
+tr
+{
+   style: none;
+}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-3rah" colspan="3" rowspan="2"><span style="color:rgb(254, 0, 0)">関係社外秘</span></th>
+    <th class="tg-dvpl" colspan="2">　　　月　　　日<br></th>
+  </tr>
+  <tr>
+    <td class="tg-dvpl" colspan="2">フロイデ株式会社代表取締役舩田愛<br></td>
+  </tr>
+  <tr>
+    <td class="tg-y7gf" colspan="5">労働条件通知書兼定額残業代についての明細書<br></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">（あなたの 月給・時給は下記の通りです。）</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36" colspan="3">適用開始日：平成　30年</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-7btt">No.</td>
+    <td class="tg-7btt">内訳</td>
+    <td class="tg-7btt">金額</td>
+    <td class="tg-us36" rowspan="3"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">①</td>
+    <td class="tg-us36">基準給与</td>
+    <td class="tg-dvpl">
+   <p>
+  <%= @standard_sal %>
+  <%= @salaries.find(params[:id]).standard_sal %>
+   </p></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">②</td>
+    <td class="tg-us36">職能給（基準）</td>
+    <td class="tg-dvpl">
+   <p>
+  <%= @ability_sal %>
+  <%= @salaries.find(params[:id]).ability_sal %>
+   </p></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">③</td>
+    <td class="tg-us36">役職手当</td>
+    <td class="tg-dvpl"><p>
+  <%= @position_sal %>
+  <%= @salaries.find(params[:id]).position_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">④</td>
+    <td class="tg-us36">職務手当</td>
+    <td class="tg-dvpl"><p>
+  <%= @task_sal %>
+  <%= @salaries.find(params[:id]).task_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑤</td>
+    <td class="tg-us36">精勤手当</td>
+    <td class="tg-dvpl"><p>
+  <%= @praise_sal %>
+  <%= @salaries.find(params[:id]).praise_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑥</td>
+    <td class="tg-us36">首都圏手当</td>
+    <td class="tg-dvpl"><p>
+  <%= @residence_spt_sal %>
+  <%= @salaries.find(params[:id]).residence_spt_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑦</td>
+    <td class="tg-us36">基本給（①～⑥合計）</td>
+    <td class="tg-dvpl"><p>
+  <%= @basic_sal %>
+  <%= @salaries.find(params[:id]).basic_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑧</td>
+    <td class="tg-us36">定額残業代※１</td>
+    <td class="tg-dvpl"><p>
+  <%= @over_sal %>
+  <%= @salaries.find(params[:id]).over_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑨</td>
+    <td class="tg-us36">家族手当</td>
+    <td class="tg-dvpl"><p>
+  <%= @fam_sal %>
+  <%= @salaries.find(params[:id]).fam_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow">⑩</td>
+    <td class="tg-us36">額面給与（⑦＋⑧＋⑨）</td>
+    <td class="tg-dvpl"><p>
+  <%= @total_sal %>
+  <%= @salaries.find(params[:id]).total_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36">※１　定額残業代明細</td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36">時間単価</td>
+    <td class="tg-dvpl"><p>
+  <%= @hour_sal %>
+  <%= @salaries.find(params[:id]).hour_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36">残業単価</td>
+    <td class="tg-dvpl">
+<p>
+  <%= @over_hour_sal %>
+  <%= @salaries.find(params[:id]).over_hour_sal %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36"></td>
+    <td class="tg-us36">定額残業時間</td>
+    <td class="tg-dvpl"><p>
+  <%= @overtime %>
+  <%= @points.find(params[:id]).overtime %>
+</p>
+</td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36" colspan="3">（１）年間休日：120"日<br></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-us36" colspan="3">（２）基本勤務時間 09:00～18:00（昼休み12:00～13:00）<br></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36"></td>
+    <td class="tg-c3ow" colspan="3">１年単位の変形労働時間制<br></td>
+    <td class="tg-us36"></td>
+  </tr>
+  <tr>
+    <td class="tg-us36" colspan="5"></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">１．あなたの時間外労働時間数が定額時間をえた月については、<br><br>上記残業単価の額に当該超えた時間数を乗じて得た額を<br><br>追加の残業代として払います。</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">２．その他深夜残業、休日出勤に関しては、労働基準法にのっとり算出し支払うものとします。</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">上記内容を確認し、ここに同意致します。<br></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">平成　　　年　　　月　　　日<br></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="5">労働者　　　　　　　　　　　　　　㊞<br></td>
+  </tr>
+</table>
+
+    </div>
+    <input type="button" value="Show Pdf file" id="btnPrint" />
+    </form>
+</body>
+</html>
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>

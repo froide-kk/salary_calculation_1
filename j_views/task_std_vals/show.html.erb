@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>職種:</strong>
+  <%= @task_std_val.task_name %>
+</p>
+
+<p>
+  <strong>職務手当:</strong>
+  <%= @task_std_val.task_val %>
+</p>
+
+<%= link_to '修正', edit_task_std_val_path(@task_std_val) %> |
+<%= link_to '移転', task_std_vals_path %>

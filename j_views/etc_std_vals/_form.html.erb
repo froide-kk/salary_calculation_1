@@ -1,0 +1,42 @@
+<%= form_with(model: etc_std_val, local: true) do |form| %>
+  <% if etc_std_val.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(etc_std_val.errors.count, "error") %> prohibited this etc_std_val from being saved:</h2>
+
+      <ul>
+      <% etc_std_val.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :精勤手当 %>
+    <%= form.number_field :praise_val %>
+  </div>
+
+  <div class="field">
+    <%= form.label :月平均労働時間 %>
+    <%= form.text_field :mon_avg_worktime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :時短の場合 %>
+    <%= form.text_field :mon_short_worktime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :年間休日 %>
+    <%= form.number_field :holiday_val %>
+  </div>
+
+  <div class="field">
+    <%= form.label :基準給与 %>
+    <%= form.number_field :std_salary_val %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

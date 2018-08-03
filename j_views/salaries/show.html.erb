@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>番号:</strong>
+  <%= @salary.emp_id %>
+</p>
+
+<p>
+  <strong>基準給与:</strong>
+  <%= @salary.standard_sal %>
+</p>
+
+<p>
+  <strong>職能給 (基準):</strong>
+  <%= @salary.ability_sal %>
+</p>
+
+<p>
+  <strong>役職手当:</strong>
+  <%= @salary.position_sal %>
+</p>
+
+<p>
+  <strong>職務手当:</strong>
+  <%= @salary.task_sal %>
+</p>
+
+<p>
+  <strong>精勤手当:</strong>
+  <%= @salary.praise_sal %>
+</p>
+
+<p>
+  <strong>首都圏手当:</strong>
+  <%= @salary.residence_spt_sal %>
+</p>
+
+<p>
+  <strong>基本給:</strong>
+  <%= @salary.basic_sal %>
+</p>
+
+<p>
+  <strong>時間単価:</strong>
+  <%= @salary.hour_sal %>
+</p>
+
+<p>
+  <strong>残業単価:</strong>
+  <%= @salary.over_hour_sal %>
+</p>
+
+<p>
+  <strong>定額残業代:</strong>
+  <%= @salary.over_sal %>
+</p>
+
+<p>
+  <strong>家族手当:</strong>
+  <%= @salary.fam_sal %>
+</p>
+
+<p>
+  <strong>額面給与:</strong>
+  <%= @salary.total_sal %>
+</p>
+
+<p>
+  <strong>2018下期給与:</strong>
+  <%= @salary.last_total_sal %>
+</p>
+
+<p>
+  <strong>差額:</strong>
+  <%= @salary.diff_total_sal %>
+</p>
+
+<p>
+  <strong>昇給率:</strong>
+  <%= @salary.rate %>
+</p>
+
+<p>
+  <strong>昨年時給:</strong>
+  <%= @salary.last_hour_sal %>
+</p>
+
+<p>
+  <strong>時給差額:</strong>
+  <%= @salary.diff_hour_sal %>
+</p>
+
+<p>
+  <strong>昨昇給率:</strong>
+  <%= @salary.last_rate %>
+</p>
+
+<%= link_to '修正', edit_salary_path(@salary) %> |
+<%= link_to '移転', salaries_path %>

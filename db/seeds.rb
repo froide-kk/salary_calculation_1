@@ -471,4 +471,4 @@ ResidenceStdVal.create(residence_name: 'Fukuoka and Kitakyushu', residence_spt_v
 
 # etc standard value
 
-EtcStdVal.create(praise_val: '10000', mon_avg_worktime: '163.3', mon_short_worktime: '122.5', holiday_val: '120', std_salary_val: '120250')
+EtcStdVal.create(praise_val: '10000', mon_avg_worktime: '163.3', mon_short_worktime: '122.5', holiday_val: '120', std_salary_val: '120250', capital_val: '50000')

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>住居地:</strong>
+  <%= @residence_std_val.residence_name %>
+</p>
+
+<p>
+  <strong>補助金:</strong>
+  <%= @residence_std_val.residence_spt_val %>
+</p>
+
+<%= link_to '修正', edit_residence_std_val_path(@residence_std_val) %> |
+<%= link_to '移転', residence_std_vals_path %>

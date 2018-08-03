@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Praise val:</strong>
+  <%= @etc_std_val.praise_val %>
+</p>
+
+<p>
+  <strong>Mon avg worktime:</strong>
+  <%= @etc_std_val.mon_avg_worktime %>
+</p>
+
+<p>
+  <strong>Mon short worktime:</strong>
+  <%= @etc_std_val.mon_short_worktime %>
+</p>
+
+<p>
+  <strong>Holiday val:</strong>
+  <%= @etc_std_val.holiday_val %>
+</p>
+
+<p>
+  <strong>Std salary val:</strong>
+  <%= @etc_std_val.std_salary_val %>
+</p>
+
+<%= link_to 'Edit', edit_etc_std_val_path(@etc_std_val) %> |
+<%= link_to 'Back', etc_std_vals_path %>
