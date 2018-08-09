@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<div class="title">Home</div>
+<div class="title">ホーム</div>
 
 <div class="search">
     <form method="get" action="/results">
-        <h3>Branch : </h3>
+        <h3>支社 : </h3>
         <select name='branch'>
             <option value='ALL' selected>ALL</option>
-            <option value='Fukuoka'>Fukuoka</option>
-            <option value='Kitakyushu'>Kitakyushu</option>
-            <option value='Tokyo'>Tokyo</option>
+            <option value='福岡'>福岡</option>
+            <option value='北九州'>北九州</option>
+            <option value='東京'>東京</option>
         </select>
 
-        <h3>Department : </h3>
+        <h3>部署 : </h3>
         <select name='department'>
             <option value='ALL' selected>ALL</option>
             <option value='F-Labo'>F-Labo</option>
@@ -21,115 +21,117 @@
             <option value='Teqbase'>Teqbase</option>
         </select>
 
-        <h3>Task : </h3>
+        <h3>職種 : </h3>
         <select name='task'>
             <option value='ALL' selected>ALL</option>
-            <option value='Development'>Development</option>
-            <option value='Management'>Management</option>
-            <option value='Sales'>Sales</option>
-            <option value='Human Resource'>Human Resource</option>
+            <option value='開発'>開発</option>
+            <option value='管理'>管理</option>
+            <option value='営業'>営業</option>
+            <option value='人事調達'>人事調達</option>
         </select>
 
-        <h3>ID : </h3>
+        <h3>社員番号 : </h3>
         <input type="text" name="emp_id" value="ALL">
 
         <br>
-        <h3><input type="submit" value="Search" style="margin: 50px 0px 0px -30px; padding: 10px 20px; cursor:pointer"></h3>
+        <h3><input type="submit" value="検索" style="margin: 50px 0px 0px -30px; padding: 10px 20px; cursor:pointer"></h3>
 
 
 <!-- search option -->
 
         <details class="search_option">
-            <summary style="cursor:pointer; width: 100px; margin: 0px auto 0px auto">Search Option</summary>
-            <div style="text-align:center; width: 700px; margin: 0px auto 0px auto; padding-left: 100px">
+            <summary style="cursor:pointer; width: 120px; margin: 0px auto 0px auto">検索オプション</summary>
+            <div style="text-align:center; width: 700px; margin: 0px auto 0px auto; padding-left: 200px">
                 <ul style="text-align:left">
-                <b>Employee</b>
+                <b>職員</b>
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="name" checked="checked"/> Name
+                <input type="checkbox" name="employee_option_list[]" value="name" checked="checked"/> 氏名
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="age" checked="checked"/> Age
+                <input type="checkbox" name="employee_option_list[]" value="age" checked="checked"/> 年齢
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="birth"/> Birth
+                <input type="checkbox" name="employee_option_list[]" value="birth"/> 生年月日
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="judgment"/> Judgment
+                <input type="checkbox" name="employee_option_list[]" value="judgment"/> 判定
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="residence"/> Residence
+                <input type="checkbox" name="employee_option_list[]" value="residence"/> 住居
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="fam_spouse"/> Family Spouse
+                <input type="checkbox" name="employee_option_list[]" value="fam_spouse"/> 扶養家族数(配偶者)
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="fam_except_spouse"/> Family Except Spouse
+                <input type="checkbox" name="employee_option_list[]" value="fam_except_spouse"/> 扶養家族数(子：18迄）
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="branch" checked="checked"/> Branch
+                <input type="checkbox" name="employee_option_list[]" value="branch" checked="checked"/> 支社
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="department" checked="checked"/> Department
+                <input type="checkbox" name="employee_option_list[]" value="department" checked="checked"/> 部署
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="task" checked="checked"/> Task
+                <input type="checkbox" name="employee_option_list[]" value="task" checked="checked"/> 職種
                 <br />
-                <input type="checkbox" name="employee_option_list[]" value="position" checked="checked"/> Position
+                <input type="checkbox" name="employee_option_list[]" value="position" checked="checked"/> 職位
                 <br />
                 </ul>
 
                 <ul style="text-align:left">
-                <b>Point</b>
+                <b>ポイント</b>
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="age_ad"/> Age Adjust
+                <input type="checkbox" name="point_option_list[]" value="age_ad"/> 年齢調整
                 <br />
                 <input type="checkbox" name="point_option_list[]" value="isms"/> ISMS
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="health"/> Healty
+                <input type="checkbox" name="point_option_list[]" value="health"/> 安全衛生
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="small_group"/> Small Group
+                <input type="checkbox" name="point_option_list[]" value="small_group"/> 小集団
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="eval_mgm"/> Evaluation Management
+                <input type="checkbox" name="point_option_list[]" value="eval_mgm"/> 経営評価
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="eval_tec"/> Evaluation Technology
+                <input type="checkbox" name="point_option_list[]" value="eval_tec"/> 技術評価
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="adjustment"/> Adjustment
+                <input type="checkbox" name="point_option_list[]" value="adjustment"/> 調整
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="is_short_work"/> Short Work
+                <input type="checkbox" name="point_option_list[]" value="is_short_work"/> 時短勤務
                 <br />
-                <input type="checkbox" name="point_option_list[]" value="overtime"/> Overtime
+                <input type="checkbox" name="point_option_list[]" value="overtime"/> 残業
                 <br />
                 </ul>
 
                 <ul style="text-align:left">
-                <b>Salary</b>
+                <b>給料</b>
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="standard_sal" checked="checked"/> Standard Salary
+                <input type="checkbox" name="salary_option_list[]" value="standard_sal" checked="checked"/> 基準給与
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="ability_sal" checked="checked"/> Ability Salary
+                <input type="checkbox" name="salary_option_list[]" value="ability_sal" checked="checked"/> 職能給
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="position_sal" checked="checked"/> Position Salary
+                <input type="checkbox" name="salary_option_list[]" value="position_sal" checked="checked"/> 役職手当
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="task_sal" checked="checked"/> Task Salary
+                <input type="checkbox" name="salary_option_list[]" value="task_sal" checked="checked"/> 職務手当
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="praise_sal" checked="checked"/> Praise Salary
+                <input type="checkbox" name="salary_option_list[]" value="praise_sal" checked="checked"/> 精勤手当
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="residence_spt_sal" /> Residence Support Salary
+                <input type="checkbox" name="salary_option_list[]" value="residence_spt_sal" /> 家賃助成金
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="basic_sal" checked="checked"/> Basic Salary
+                <input type="checkbox" name="salary_option_list[]" value="capital_sal" /> 首都圏手当
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="hour_sal"/> Hour Salary
+                <input type="checkbox" name="salary_option_list[]" value="basic_sal" checked="checked"/> 基本給
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="over_hour_sal"/> Over Hour Salary
+                <input type="checkbox" name="salary_option_list[]" value="hour_sal"/> 時間単価
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="over_sal" checked="checked"/> Over Salary
+                <input type="checkbox" name="salary_option_list[]" value="over_hour_sal"/> 残業単価
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="fam_sal"/> Family Salary
+                <input type="checkbox" name="salary_option_list[]" value="over_sal" checked="checked"/> 定額残業代
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="total_sal" checked="checked"/> Total Salary
+                <input type="checkbox" name="salary_option_list[]" value="fam_sal"/> 家族手当
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="last_total_sal"/> Last Total Salary
+                <input type="checkbox" name="salary_option_list[]" value="total_sal" checked="checked"/> 額面給与
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="diff_total_sal"/> Difference Total Salary
+                <input type="checkbox" name="salary_option_list[]" value="last_total_sal"/> 下期給与
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="rate" checked="checked"/> Rate
+                <input type="checkbox" name="salary_option_list[]" value="diff_total_sal"/> 差額
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="last_hour_sal"/> Last Hour Salary
+                <input type="checkbox" name="salary_option_list[]" value="rate" checked="checked"/> 昇給率
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="diff_hour_sal"/> Difference Hour Salary
+                <input type="checkbox" name="salary_option_list[]" value="last_hour_sal"/> 昨年時給
                 <br />
-                <input type="checkbox" name="salary_option_list[]" value="last_rate"/> Last Rate
+                <input type="checkbox" name="salary_option_list[]" value="diff_hour_sal"/> 時給差額
+                <br />
+                <input type="checkbox" name="salary_option_list[]" value="last_rate"/> 昨昇給率
                 <br />
                 </ul>
             </div>

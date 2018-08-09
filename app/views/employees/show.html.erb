@@ -39,7 +39,11 @@ tr
 <br>
 <table class="tg">
   <tr>
-    <th class="tg-3rah" colspan="3" rowspan="2"><span style="color:rgb(254, 0, 0)">関係社外秘</span></th>
+    <th class="tg-3rah" colspan="3" rowspan="2">
+  <%= @name %>
+  <%= @employees.find(params[:id]).name %>
+  <%= @position %>
+  <%= @employees.find(params[:id]).position %></th>
     <th class="tg-dvpl" colspan="2">　　　月　　　日<br></th>
   </tr>
   <tr>
@@ -139,7 +143,9 @@ tr
   <%= @salaries.find(params[:id]).basic_sal %>
 </p>
 </td>
-    <td class="tg-us36"></td>
+    <td class="tg-us36">時短勤務<p></p>
+  <%= @is_short_work %>
+  <%= @points.find(params[:id]).is_short_work %> </td>
   </tr>
   <tr>
     <td class="tg-us36"></td>
@@ -258,9 +264,9 @@ tr
 </table>
 
     </div>
-    <input style="font-size: 15px; padding: 20px 30px;"type="button" value="Show Pdf file" id="btnPrint" />
+    <input style="font-size: 15px; float: inherit; margin: 50px 44.5% 0px 45.5%; padding: 20px 30px;"type="button" value="Show Pdf file" id="btnPrint" />
     </form>
 </body>
 </html>
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+
+<button class="center"><%= link_to 'バック', employees_path %></button>

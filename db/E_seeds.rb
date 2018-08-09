@@ -272,7 +272,7 @@ Salary.create(employee_id: '3', emp_id: '3', standard_sal: '120250', ability_sal
 
 Salary.create(employee_id: '4', emp_id: '4', standard_sal: '120250', ability_sal: '80000', position_sal: '175000', task_sal: '25000', praise_sal: '0', residence_spt_sal: '0', basic_sal: '440250', hour_sal: '2452', over_hour_sal: '3065', over_sal: '0', fam_sal: '0', total_sal: '400250', last_total_sal: '395250', diff_total_sal: '5000', rate: '4.04', last_hour_sal: '2353', diff_hour_sal: '99', last_rate: '1.27')
 
-Salary.create(employee_id: '5', emp_id: '5', standard_sal: '120250', ability_sal: '51000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '50000', basic_sal: '256250', hour_sal: '1570', over_hour_sal: '1963', over_sal: '88335', fam_sal: '0', total_sal: '344585', last_total_sal: '336450', diff_total_sal: '8135', rate: '1.66', last_hour_sal: '1544', diff_hour_sal: '26', last_rate: '2.42')
+Salary.create(employee_id: '5', emp_id: '5', standard_sal: '120250', ability_sal: '51000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '256250', hour_sal: '1570', over_hour_sal: '1963', over_sal: '88335', fam_sal: '0', total_sal: '344585', last_total_sal: '336450', diff_total_sal: '8135', rate: '1.66', last_hour_sal: '1544', diff_hour_sal: '26', last_rate: '2.42', capital_sal: '50000')
 
 Salary.create(employee_id: '6', emp_id: '6', standard_sal: '120250', ability_sal: '80000', position_sal: '175000', task_sal: '25000', praise_sal: '0', residence_spt_sal: '0', basic_sal: '440250', hour_sal: '2452', over_hour_sal: '3065', over_sal: '0', fam_sal: '10000', total_sal: '410250', last_total_sal: '338735', diff_total_sal: '71515', rate: '40.21', last_hour_sal: '1466', diff_hour_sal: '986', last_rate: '21.11')
 
@@ -362,7 +362,7 @@ Salary.create(employee_id: '48', emp_id: '48', standard_sal: '120250', ability_s
 
 Salary.create(employee_id: '49', emp_id: '49', standard_sal: '120250', ability_sal: '39000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '194250', hour_sal: '1190', over_hour_sal: '1488', over_sal: '59520', fam_sal: '0', total_sal: '253770', last_total_sal: '252400', diff_total_sal: '1370', rate: '-0.17', last_hour_sal: '1192', diff_hour_sal: '-2', last_rate: '0.54')
 
-Salary.create(employee_id: '50', emp_id: '50', standard_sal: '90188', ability_sal: '48750', position_sal: '0', task_sal: '18750', praise_sal: '7500', residence_spt_sal: '37500', basic_sal: '202688', hour_sal: '1655', over_hour_sal: '2069', over_sal: '69829', fam_sal: '0', total_sal: '272516', last_total_sal: '258158', diff_total_sal: '14359', rate: '4.59', last_hour_sal: '1579', diff_hour_sal: '76', last_rate: '5.56')
+Salary.create(employee_id: '50', emp_id: '50', standard_sal: '90188', ability_sal: '48750', position_sal: '0', task_sal: '18750', praise_sal: '7500', residence_spt_sal: '0', basic_sal: '202688', hour_sal: '1655', over_hour_sal: '2069', over_sal: '69829', fam_sal: '0', total_sal: '272516', last_total_sal: '258158', diff_total_sal: '14359', rate: '4.59', last_hour_sal: '1579', diff_hour_sal: '76', last_rate: '5.56', capital_sal: '37500')
 
 Salary.create(employee_id: '51', emp_id: '51', standard_sal: '120250', ability_sal: '88000', position_sal: '0', task_sal: '25000', praise_sal: '10000', residence_spt_sal: '0', basic_sal: '243250', hour_sal: '1490', over_hour_sal: '1863', over_sal: '83835', fam_sal: '5000', total_sal: '332085', last_total_sal: '333080', diff_total_sal: '-995', rate: '4.77', last_hour_sal: '1419', diff_hour_sal: '71', last_rate: '-0.30')
 
@@ -458,8 +458,6 @@ TaskStdVal.create(task_name: 'Human Resources', task_val: '12500')
 
 # residence standard value
 
-ResidenceStdVal.create(residence_name: 'Tokyo', residence_spt_val: '5000')
-
 ResidenceStdVal.create(residence_name: 'Fukuoka and Kitakyushu', residence_spt_val: '0')
 
 
@@ -471,4 +469,4 @@ ResidenceStdVal.create(residence_name: 'Fukuoka and Kitakyushu', residence_spt_v
 
 # etc standard value
 
-EtcStdVal.create(praise_val: '10000', mon_avg_worktime: '163.3', mon_short_worktime: '122.5', holiday_val: '120', std_salary_val: '120250')
+EtcStdVal.create(praise_val: '10000', mon_avg_worktime: '163.3', mon_short_worktime: '122.5', holiday_val: '120', std_salary_val: '120250', capital_val: '50000')

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Standards</h1>
+<h1 class="title">基準値</h1>
 
 
 
@@ -8,15 +8,15 @@
 
 <div>
     <table>
-      <caption>Position Standard Value</caption>
+      <caption>職位基準値</caption>
       <thead>
         <tr>
-          <th>Position name</th>
-          <th>Ability val</th>
-          <th>Max overtime</th>
-          <th>Pos val</th>
-          <th>Pos inc val</th>
-          <th>Pos std age</th>
+          <th>職位</th>
+          <th>職能給</th>
+          <th>最大残業時間</th>
+          <th>職責手当</th>
+          <th>増額分</th>
+          <th>基準年齢</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -25,30 +25,30 @@
         <% @position_std_vals.each do |position_std_val| %>
           <tr>
             <td><%= position_std_val.position_name %></td>
-            <td><%= number_with_precision(position_std_val.ability_val, :precision => 0, :delimiter => ',') %> &yen;</td>
+            <td>&yen; <%= number_with_precision(position_std_val.ability_val, :precision => 0, :delimiter => ',') %></td>
             <td><%= position_std_val.max_overtime %></td>
-            <td><%= number_with_precision(position_std_val.pos_val, :precision => 0, :delimiter => ',') %> &yen;</td>
-            <td><%= number_with_precision(position_std_val.pos_inc_val, :precision => 0, :delimiter => ',') %> &yen;</td>
+            <td>&yen; <%= number_with_precision(position_std_val.pos_val, :precision => 0, :delimiter => ',') %></td>
+            <td>&yen; <%= number_with_precision(position_std_val.pos_inc_val, :precision => 0, :delimiter => ',') %></td>
             <td><%= position_std_val.pos_std_age %></td>
-            <td><%= link_to 'Edit', edit_position_std_val_path(position_std_val) %></td>
-            <td><%= link_to 'Destroy', position_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '編集', edit_position_std_val_path(position_std_val) %></td>
+            <td><%= link_to '削除', position_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <button class="right" onclick="location.href = '/position_std_val/new'">+ Add Value</button>
+    <button class="right" onclick="location.href = '/position_std_val/new'">+ 追加</button>
     <br>
 </div>
 
 <div>
     <table>
-      <caption>Evaluation Standard Value</caption>
+      <caption>評価基準値</caption>
       <thead>
         <tr>
-          <th>Eval name</th>
-          <th>Eval val</th>
+          <th>評価単価 </th>
+          <th>金額 </th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -57,26 +57,26 @@
         <% @evaluation_std_vals.each do |evaluation_std_val| %>
           <tr>
             <td><%= evaluation_std_val.eval_name %></td>
-            <td><%= number_with_precision(evaluation_std_val.eval_val, :precision => 0, :delimiter => ',') %> &yen;</td>
-            <td><%= link_to 'Edit', edit_evaluation_std_val_path(evaluation_std_val) %></td>
-            <td><%= link_to 'Destroy', evaluation_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>&yen; <%= number_with_precision(evaluation_std_val.eval_val, :precision => 0, :delimiter => ',') %></td>
+            <td><%= link_to '編集', edit_evaluation_std_val_path(evaluation_std_val) %></td>
+            <td><%= link_to '削除', evaluation_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <button class="right" onclick="location.href = '/evaluation_std_val/new'">+ Add Value</button>
+    <button class="right" onclick="location.href = '/evaluation_std_val/new'">+ 追加</button>
     <br>
 </div>
 
 <div>
     <table>
-      <caption>Task Standard Value</caption>
+      <caption>職務基準値</caption>
       <thead>
         <tr>
-          <th>Task name</th>
-          <th>Task val</th>
+          <th>職務</th>
+          <th>職務手当</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -85,26 +85,26 @@
         <% @task_std_vals.each do |task_std_val| %>
           <tr>
             <td><%= task_std_val.task_name %></td>
-            <td><%= number_with_precision(task_std_val.task_val, :precision => 0, :delimiter => ',') %> &yen;</td>
-            <td><%= link_to 'Edit', edit_task_std_val_path(task_std_val) %></td>
-            <td><%= link_to 'Destroy', task_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>&yen; <%= number_with_precision(task_std_val.task_val, :precision => 0, :delimiter => ',') %></td>
+            <td><%= link_to '編集', edit_task_std_val_path(task_std_val) %></td>
+            <td><%= link_to '削除', task_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <button class="right" onclick="location.href = '/task_std_val/new'">+ Add Value</button>
+    <button class="right" onclick="location.href = '/task_std_val/new'">+ 追加</button>
     <br>
 </div>
 
 <div>
     <table>
-      <caption>Residence Standard Value</caption>
+      <caption>居住地基準値</caption>
       <thead>
         <tr>
-          <th>Residence name</th>
-          <th>Residence spt val</th>
+          <th>居住地</th>
+          <th>家賃支援金</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -113,29 +113,30 @@
         <% @residence_std_vals.each do |residence_std_val| %>
           <tr>
             <td><%= residence_std_val.residence_name %></td>
-            <td><%= number_with_precision(residence_std_val.residence_spt_val, :precision => 0, :delimiter => ',') %> &yen;</td>
-            <td><%= link_to 'Edit', edit_residence_std_val_path(residence_std_val) %></td>
-            <td><%= link_to 'Destroy', residence_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>&yen; <%= number_with_precision(residence_std_val.residence_spt_val, :precision => 0, :delimiter => ',') %></td>
+            <td><%= link_to '編集', edit_residence_std_val_path(residence_std_val) %></td>
+            <td><%= link_to '削除', residence_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <button class="right" onclick="location.href = '/residence_std_val/new'">+ Add Value</button>
+    <button class="right" onclick="location.href = '/residence_std_val/new'">+ 追加</button>
     <br>
 </div>
 
 <div>
     <table>
-      <caption>ETC Standard Value</caption>
+      <caption>その他基準値</caption>
       <thead>
         <tr>
-          <th>Praise val</th>
-          <th>Mon avg worktime</th>
-          <th>Mon short worktime</th>
-          <th>Holiday val</th>
-          <th>Std salary val</th>
+          <th>精勤手当</th>
+          <th>月平均労働時間</th>
+          <th>時短の場合</th>
+          <th>年間休日</th>
+          <th>基準給与</th>
+          <th>首都圏手当</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -143,24 +144,25 @@
       <tbody>
         <% @etc_std_vals.each do |etc_std_val| %>
           <tr>
-            <td><%= number_with_precision(etc_std_val.praise_val, :precision => 0, :delimiter => ',') %> &yen;</td>
+            <td>&yen; <%= number_with_precision(etc_std_val.praise_val, :precision => 0, :delimiter => ',') %></td>
             <td><%= etc_std_val.mon_avg_worktime %></td>
             <td><%= etc_std_val.mon_short_worktime %></td>
             <td><%= etc_std_val.holiday_val %> Days</td>
-            <td><%= number_with_precision(etc_std_val.std_salary_val, :precision => 0, :delimiter => ',') %> &yen;</td>
-            <td><%= link_to 'Edit', edit_etc_std_val_path(etc_std_val) %></td>
-            <td><%= link_to 'Destroy', etc_std_val, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>&yen; <%= number_with_precision(etc_std_val.std_salary_val, :precision => 0, :delimiter => ',') %></td>
+            <td>&yen; <%= number_with_precision(etc_std_val.capital_val, :precision => 0, :delimiter => ',') %></td>
+            <td><%= link_to '編集', edit_etc_std_val_path(etc_std_val) %></td>
+            <td><%= link_to '削除', etc_std_val, method: :delete, data: { confirm: '削除しますか？' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br>
-    <button class="right" onclick="location.href = '/etc_std_val/new'">+ Add Value</button>
+    <button class="right" onclick="location.href = '/etc_std_val/new'">+ 追加</button>
     <br>
 </div>
 
 <br>
 <br>
 <%= number_with_precision(@number, :precision => 2, :delimiter => ',') %>
-<button class="center" onclick="javascript:history.back()">Back</button>
+<button class="center" onclick="javascript:history.back()">バック</button>

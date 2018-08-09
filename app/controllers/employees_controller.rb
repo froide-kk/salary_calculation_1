@@ -13,6 +13,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @employees = Employee.all
     @salaries = Salary.all
     @points = Point.all
   end
@@ -49,9 +50,9 @@ class EmployeesController < ApplicationController
     #create employee
 
     if @employee.age < 40
-        @employee.judgment = "Half"
+        @employee.judgment = "折半"
     else
-        @employee.judgment = "NO.2"
+        @employee.judgment = "２号"
     end
 
     #create employee point
@@ -67,25 +68,25 @@ class EmployeesController < ApplicationController
             @point[column_list[index]] = false
         elsif column_list[index] == "age_ad"
             case @employee.position
-            when "Head of Total Department"
+            when "統括部長"
                 @point.age_ad = 0
-            when "Head of Department"
+            when "部長"
                 @point.age_ad = 0
-            when "Deputy Director"
+            when "次長"
                 @point.age_ad = 0
-            when "Manager"
+            when "マネージャー"
                 @point.age_ad = 0
-            when "Assistant Manager"
+            when "アシスタントマネージャー"
                 @point.age_ad = @employee.age - psv.pos_std_age
-            when "Leader"
+            when "リーダー"
                 @point.age_ad = @employee.age - psv.pos_std_age
-            when "Assistant Leader"
+            when "アシスタントリーダー"
                 @point.age_ad = @employee.age - psv.pos_std_age
-            when "Normal Staff"
+            when "一般社員"
                 @point.age_ad = @employee.age - psv.pos_std_age
-            when "Second Rookie"
+            when "第２新人"
                 @point.age_ad = @employee.age - psv.pos_std_age
-            when "Rookie"
+            when "新人"
                 @point.age_ad = @employee.age - psv.pos_std_age
             end
         else
@@ -122,12 +123,12 @@ class EmployeesController < ApplicationController
             #end
             # need array...
 
-            point_sal = point_sal + @point["isms"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "isms").first.eval_val
-            point_sal = point_sal + @point["health"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "health").first.eval_val
-            point_sal = point_sal + @point["small_group"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "small_group").first.eval_val
-            point_sal = point_sal + @point["eval_mgm"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_mgm").first.eval_val
-            point_sal = point_sal + @point["eval_tec"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "eval_tec").first.eval_val
-            point_sal = point_sal + @point["adjustment"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "adjustment").first.eval_val
+            point_sal = point_sal + @point["isms"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "ISMS").first.eval_val
+            point_sal = point_sal + @point["health"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "安全衛生委員").first.eval_val
+            point_sal = point_sal + @point["small_group"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "小集団").first.eval_val
+            point_sal = point_sal + @point["eval_mgm"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "管理評価").first.eval_val
+            point_sal = point_sal + @point["eval_tec"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "技術評価").first.eval_val
+            point_sal = point_sal + @point["adjustment"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "調整").first.eval_val
             @salary[column_list[index]] = psv.ability_val + point_sal
         when "position_sal"
             @salary[column_list[index]] = psv.pos_val
@@ -138,7 +139,7 @@ class EmployeesController < ApplicationController
         when "residence_spt_sal"
             @salary[column_list[index]] = rsv.residence_spt_val
         when "capital_sal"
-            if @employee["residence"] == "Tokyo"
+            if @employee["residence"] == "東京"
                 @salary[column_list[index]] = @etc_std_val.capital_val
             else
                 @salary[column_list[index]] = 0
@@ -204,9 +205,9 @@ class EmployeesController < ApplicationController
     # update employee
 
     if @employee.age < 40
-        @employee.judgment = "Half"
+        @employee.judgment = "折半"
     else
-        @employee.judgment = "NO.2"
+        @employee.judgment = "２号"
     end
 
 

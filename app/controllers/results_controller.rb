@@ -50,7 +50,7 @@ def index
     end
 
     if !(emp_id == "ALL")
-        @results = @results.where("emp_id = ?", emp_id)
+        @results = @results.where("employees.emp_id = ?", emp_id)
     end
 end
     #search option

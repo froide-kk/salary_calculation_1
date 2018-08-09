@@ -1,24 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Employees</h1>
+<h1 class="title">社員情報</h1>
 <br>
 <br>
 
 <table>
   <thead>
     <tr>
-      <th>Emp</th>
-      <th>Name</th>
-      <th>Birth</th>
-      <th>Age</th>
-      <th>Judgment</th>
-      <th>Branch</th>
-      <th>Department</th>
-      <th>Task</th>
-      <th>Residence</th>
-      <th>Fam spouse</th>
-      <th>Fam except spouse</th>
-      <th>Position</th>
+      <th>社員番号</th>
+      <th>氏名</th>
+      <th>生年月日</th>
+      <th>年齢</th>
+      <th>判定</th>
+      <th>支社</th>
+      <th>部署</th>
+      <th>職種</th>
+      <th>住居</th>
+      <th>扶養家族数(配偶者)</th>
+      <th>扶養家族数(子：18迄</th>
+      <th>職位</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,15 +38,15 @@
         <td><%= employee.fam_spouse %></td>
         <td><%= employee.fam_except_spouse %></td>
         <td><%= employee.position %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '明細書', employee %></td>
+        <td><%= link_to '編集', edit_employee_path(employee) %></td>
+        <td><%= link_to '削除', employee, method: :delete, data: { confirm: '削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<button class="right" onclick="location.href = '/employees/new'">+ Add Employee</button>
+<button class="right" onclick="location.href = '/employees/new'">+ 社員を追加</button>
 
-<button class="center" onclick="javascript:history.back()">Back</button>
+<button class="center" onclick="javascript:history.back()">バック</button>

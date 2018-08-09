@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="title">Employee Point</h1>
+<h1 class="title">社員ポイント</h1>
 <br>
 <br>
 
 <table>
   <thead>
     <tr>
-      <th>Emp</th>
-      <th>Age ad</th>
-      <th>Isms</th>
-      <th>Health</th>
-      <th>Small group</th>
-      <th>Eval mgm</th>
-      <th>Eval tec</th>
-      <th>Adjustment</th>
-      <th>Is short work</th>
-      <th>Overtime</th>
+      <th>社員番号</th>
+      <th>年齢調整値</th>
+      <th>ISMS</th>
+      <th>安全衛生</th>
+      <th>小集団</th>
+      <th>経営評価</th>
+      <th>技術評価</th>
+      <th>調整</th>
+      <th>時短勤務</th>
+      <th>残業</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,8 +34,7 @@
         <td><%= point.adjustment %></td>
         <td><%= point.is_short_work %></td>
         <td><%= point.overtime %></td>
-        <!--<td><%= link_to 'Show', point %></td>-->
-        <td><%= link_to 'Edit', edit_point_path(point) %></td>
+        <td><%= link_to '編集', edit_point_path(point) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -43,4 +42,4 @@
 
 <br>
 
-<button class="center" onclick="javascript:history.back()">Back</button>
+<button class="center" onclick="javascript:history.back()">バック</button>

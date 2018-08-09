@@ -41,59 +41,31 @@ class PointsController < ApplicationController
   # PATCH/PUT /points/1
   # PATCH/PUT /points/1.json
   def update
-    @salary = Salary.find(@point.id)
-    column_list = Point.column_names
-
-
-    @position_std_val = PositionStdVal.all
-    psv = @position_std_val.where("position_name = ?", @employee.position).first
-    @evaluation_std_vals = EvaluationStdVal.all
-
-    ability_sal = psv.ability_val
-
-    for index in 3...column_list.size
-        case @point[column_list[index]]
-        when "age_ad"
-            ability_sal = ability_sal + (@point["age_ad"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "age_ad").first.eval_val)
-        when "isms"
-            ability_sal = ability_sal + (@point["isms"] * @evaluation_std_vals.select("eval_val").where("eval_name = ?", "isms").first.eval_val)      
-        end
-
-    for index in 3...column_list.size
-        if column_list[index] == "is_short_work"
-            @point[column_list[index]] = false
-        elsif column_list[index] == "age_ad"
-            case @employee.position
-            when "Head of Total Department"
-                @point.age_ad = 0
-            when "Head of Department"
-                @point.age_ad = 0
-            when "Deputy Director"
-                @point.age_ad = 0
-            when "Manager"
-                @point.age_ad = 0
-            when "Assistant Manager"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            when "Leader"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            when "Assistant Leader"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            when "Normal Staff"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            when "Second Rookie"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            when "Rookie"
-                @point.age_ad = @employee.age - psv.pos_std_age
-            end
-        else
-            @point[column_list[index]] = 0
-        end
-    end
-
-    end
     respond_to do |format|
       if @point.update(point_params)
-        @salary.update(:ability_sal => "5000")
+
+        @employee = Employee.find(@point.id)
+        @psv = PositionStdVal.where("position_name = ?", @employee.position).first
+
+        ability_sal = @psv.ability_val
+
+        ability_sal = ability_sal + (@point["isms"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "ISMS").first.eval_val)
+        ability_sal = ability_sal + (@point["health"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "安全衛生委員").first.eval_val)
+        ability_sal = ability_sal + (@point["small_group"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "小集団").first.eval_val)
+        ability_sal = ability_sal + (@point["eval_mgm"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "管理評価").first.eval_val)
+        ability_sal = ability_sal + (@point["eval_tec"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "技術評価").first.eval_val)
+        ability_sal = ability_sal + (@point["adjustment"] * EvaluationStdVal.select("eval_val").where("eval_name = ?", "調整").first.eval_val)
+
+        if @point.is_short_work
+            ability_sal = ability_sal * 0.75
+        end
+
+        diff = ability_sal - @salary.ability_sal
+
+        @salary.update(:ability_sal => ability_sal)
+        @salary.update(:basic_sal => @salary.basic_sal + diff)
+        @salary.update(:total_sal => @salary.total_sal + diff)
+
         format.html { redirect_to @point, notice: 'Point was successfully updated.' }
         format.json { render :show, status: :ok, location: @point }
       else

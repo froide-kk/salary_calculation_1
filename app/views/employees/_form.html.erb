@@ -13,60 +13,82 @@
 
   <!-- need exists judge -->
   <div class="field">
-    <%= form.label :Employee_ID %>
+    <%= form.label :社員番号 %>
     <%= form.text_field :emp_id %>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :名前 %>
     <%= form.text_field :name %>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :birth %>
+    <%= form.label :生年月日 %>
     <%= form.date_select :birth, :start_year=>1950, :end_year=>2018 %>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :age %>
+    <%= form.label :年齢 %>
     <%= form.number_field :age, :min=>1, :max=>100 %>
   </div>
 
-  <div class="field">
-    <%= form.label :branch %>
-    <%= form.select :branch, ["Fukuoka", "Tokyo", "Kitakyushu"]%>
-  </div>
+  <br>
 
   <div class="field">
-    <%= form.label :department %>
+    <%= form.label :支社 %>
+    <%= form.select :branch, ["福岡", "東京", "北九州"]%>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= form.label :部署 %>
     <%= form.select :department, ["F-Labo", "Growth Hack Ata", "Game Studio", "Teqbase"]%>
   </div>
 
-  <div class="field">
-    <%= form.label :task %>
-    <%= form.select :task, ["Development", "Management", 'Sales', "Human Resource"]%>
-  </div>
+  <br>
 
   <div class="field">
-    <%= form.label :residence %>
-    <%= form.select :residence, ["Fukuoka and Kitakyushu", "Tokyo"]%>
+    <%= form.label :職種 %>
+    <%= form.select :task, ["開発", "管理", '営業', "人事調達"]%>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :fam_spouse %>
+    <%= form.label :住居 %>
+    <%= form.select :residence, ["福岡・北九州", "東京"]%>
+  </div>
+
+  <br>
+
+  <div class="field">
+    <%= form.label :扶養家族数：配偶者 %>
     <%= form.number_field :fam_spouse, :min=>0, :max=>1 %>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :fam_except_spouse %>
+    <%= form.label :扶養家族数子：18迄 %>
     <%= form.number_field :fam_except_spouse, :min=>0, :max=>9 %>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= form.label :position %>
-    <%= form.select :position, ['Head of Total Department', 'Head of Department', 'Deputy Director',
-      "Manager", "Assistant Manager", "Leader", "Assistant Leader", "Normal Staff", "Second Rookie", "Rookie"]%>
+    <%= form.label :職位 %>
+    <%= form.select :position, ['統括部長', '部長', '次長', "マネージャー", "アシスタントマネージャー",
+      "リーダー", "アシスタントリーダー", "一般社員", "第２新人", "新人"]%>
   </div>
+
+<br>
 
   <div class="actions">
     <%= form.submit %>
